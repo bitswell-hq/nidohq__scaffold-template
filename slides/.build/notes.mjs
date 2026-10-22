@@ -23,7 +23,7 @@ function onSlide(c){
  add(c.note,c.footnote,c.links);
  if(c.image)add(`[Screenshot: ${c.image.alt}]`);
  add(c.caption);
- return {kicker:c.kicker,heading:flat(c.heading),text:text.flatMap(t=>t.split('\n')),...(c.code?{code:c.code}:{})};
+ return {kicker:c.kicker,heading:flat(c.heading),text:text.flatMap(t=>t.split('\n')),...(c.code?{code:c.code,lang:c.lang}:{})};
 }
 
 /** A source as a repo-relative path (sources are written relative to the deck). */
@@ -78,7 +78,8 @@ const md=[
   `**On the slide:** ${[s.onSlide.kicker,s.onSlide.heading].filter(Boolean).join(' · ')}`,
   '',
   ...s.onSlide.text.map(t=>`- ${t}`),
-  ...(s.onSlide.code?['','```',s.onSlide.code,'```']:[]),
+  // A Markdown fence's info string, so GitHub highlights it as the slide does.
+  ...(s.onSlide.code?['','```'+({trace:'text'}[s.onSlide.lang]??s.onSlide.lang),s.onSlide.code,'```']:[]),
   '',
   '**Script**',
   '',

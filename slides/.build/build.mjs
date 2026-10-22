@@ -7,6 +7,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import {FileBlob, PresentationFile} from '@oai/artifact-tool';
 import {slides as content,templateUrl} from './content.mjs';
+import {highlight,palette,languageName} from './highlight.mjs';
 import {schedule,timing,talkSeconds,talkSlides} from './schedule.mjs';
 
 const root=fileURLToPath(new URL('../',import.meta.url));
@@ -38,6 +39,24 @@ function fit(text,width,max,em=.66){
  return Math.min(max,Math.floor(width/(longest*em)));
 }
 const height=(text,size,leading=1.18)=>Math.ceil(lines(text).length*size*leading);
+/** Lines `text` wraps to in `width` at `size`; Inter's average glyph runs ~0.53em. */
+function wrapped(text,width,size,em=.53){
+ let n=0;
+ for(const line of lines(text)){
+  let used=0;n++;
+  for(const word of line.split(' ')){
+   const w=(word.length+1)*size*em;
+   if(used&&used+w>width){n++;used=w;}else used+=w;
+  }
+ }
+ return n;
+}
+/** Paragraphs of one style, `gap` px apart (spaceAfter is in hundredths of
+ * a point, the OOXML unit; a px is 0.75pt). */
+function paragraphs(text,style,gap){
+ return lines(text).map((l,i,all)=>({runs:[{run:l,style}],...(i<all.length-1?{spaceAfter:Math.round(gap*75)}:{})}));
+}
+const mono='JetBrains Mono NL';
 
 /** A heading block at (left, top) within `width`, returning where it ends. */
 function heading(s,re,text,left,top,width,max){
@@ -70,25 +89,27 @@ const layouts={
   edit(find(s,/T H E/),spaced(c.kicker),rect(54,33,700,28),{fontSize:12});
   const top=lines(c.heading).length>2?120:172;
   const end=heading(s,/ONE CLEAR/,c.heading,116,top,780,c.size??52);
-  edit(find(s,/Name Name/),c.subtitle,rect(121,end+22,690,42),{fontSize:22,italic:false});
+  edit(find(s,/Name Name/),c.subtitle,rect(121,end+22,690,Math.ceil(wrapped(c.subtitle,690,22)*22*1.3)),{fontSize:22,italic:false});
  }},
- steps:{template:3,render(s,c){
-  heading(s,/SESSION AGENDA/,c.heading,290,98,620,48);
-  edit(find(s,/T O D A Y/),spaced(c.kicker),rect(295,32,480,22),{fontSize:12});
-  ['Opening idea','Core concept','Demo / Case study','Questions + Next step'].forEach((v,i)=>
-   edit(find(s,new RegExp('^'+v.replace('+','\\+')+'$')),c.rows[i],rect(364,196+i*71,510,42),{fontSize:fit(c.rows[i],510,24,.52)}));
-  blank(s,/^\d+ MIN$/);
- }},
- takeaways:{template:8,render(s,c){
-  heading(s,/KEY TAKEAWAYS/,c.heading,49,91,858,48);
+ // Template 8's white head and black band, without its numerals and rules:
+ // up to six findings, each a yellow lead and a sentence or two.
+ points:{template:8,render(s,c){
+  heading(s,/KEY TAKEAWAYS/,c.heading,49,91,858,44);
   edit(find(s,/T H R E E/),spaced(c.kicker),rect(52,30,700,24),{fontSize:12});
-  s.shapes.items.filter(x=>String(x.text).startsWith('TAKEAWAY')).forEach((x,i)=>{
-   const [title,body]=c.items[i];
-   x.text=[{runs:[{run:title,style:{fontSize:`${fit(title,252,24,.7)}px`,typeface:'Inter',bold:true,color:white}}],spaceAfter:14},{runs:[{run:body,style:{fontSize:'20px',typeface:'Inter',bold:false,color:white}}]}];
-   x.text.style={insets:0,autoFit:'none',wrap:'word'};
-   x.position=rect([52,351,654][i],306,252,164);
+  for(const x of [...s.shapes.items])if(String(x.text).startsWith('TAKEAWAY')||x.position.width<2)x.delete();
+  for(const x of [...s.images.items])if(x.position.top>190&&x.position.top<220&&x.position.width<80)x.delete();
+  const n=c.items.length,cols=n<=3?n:n===4?2:3,rows=Math.ceil(n/cols);
+  const gap=36,width=(858-gap*(cols-1))/cols,size=c.size??(cols===3&&rows>1?18:20);
+  const top=c.intro?236:186,bottom=496,rowHeight=(bottom-top)/rows;
+  if(c.intro)add(s,c.intro,rect(52,186,858,34),18,white);
+  c.items.forEach(([lead,body],i)=>{
+   const left=52+(i%cols)*(width+gap),y=top+Math.floor(i/cols)*rowHeight;
+   const need=26+Math.ceil(wrapped(body,width,size)*size*1.3);
+   if(need>rowHeight-8)throw new Error(`"${c.title}": item "${lead}" needs ${need}px of ${Math.floor(rowHeight-8)}`);
+   add(s,lead,rect(left,y,width,22),15,yellow,true);
+   const x=add(s,body,rect(left,y+26,width,rowHeight-34),size,white);
+   x.text.style={insets:0,autoFit:'none',wrap:'word',lineSpacing:1.1};
   });
-  if(c.note)add(s,c.note,rect(470,100,440,56),15,black);
  }},
  // Photo on the left, text on the right (template 7) or the reverse (9).
  topicLeft:{template:7,render(s,c){topic(s,c,318,600)}},
@@ -109,21 +130,24 @@ const layouts={
   }
   if(c.caption)add(s,c.caption,rect(69,458,440,26),15,yellow);
  }},
+ // Highlighted code in a panel, and a caption under it.
  code:{template:10,render(s,c){
   const end=demoFrame(s,c);
   for(const x of [...s.shapes.items])if(x.position.left>530&&x.position.top>160)x.delete();
-  const codeSize=fit(c.code,829,23,.5);
-  add(s,c.code,rect(69,end+28,829,height(c.code,codeSize,1.3)),codeSize,white);
-  add(s,c.caption,rect(69,455,829,29),17,yellow);
+  // The caption follows the panel, which hugs its code.
+  const captionH=c.caption?Math.ceil(wrapped(c.caption,829,17)*17*1.3):0;
+  const top=end+24,bottom=c.caption?484-captionH-14:470;
+  const panelEnd=codePanel(s,c,rect(69,top,829,bottom-top));
+  if(c.caption)add(s,c.caption,rect(69,panelEnd+14,829,captionH),17,yellow);
  }},
  next:{template:12,async render(s,c){
   heading(s,/YOUR NEXT STEP/,c.heading,52,99,866,42);
-  edit(find(s,/One clear action/),c.body,rect(53,180,575,90),{fontSize:26});
+  edit(find(s,/One clear action/),c.body,rect(53,180,575,90),{fontSize:24});
   edit(find(s,/K E E P/),spaced(c.kicker),rect(54,33,660,28),{fontSize:12});
   blank(s,/\[QR CODE\]/);
   add(s,c.links,rect(54,291,580,73),18);
   const qr=await fs.readFile(path.join(build,'nido-qr.png'));
-  s.images.add({blob:qr,contentType:'image/png',position:rect(666,243,165,165),alt:'QR code to https://nido.fyi',fit:'contain'});
+  s.images.add({blob:qr,contentType:'image/png',position:rect(666,243,165,165),alt:'QR code to https://test.nido.fyi',fit:'contain'});
  }},
 };
 
@@ -135,9 +159,36 @@ function topic(s,c,left,width){
  // Template 9 keeps its font and tracking on the first paragraph only, so
  // its headings stay on one line (layouts.topicRight checks that).
  edit(find(s,/^LOREM IPSUM/),c.heading,rect(left,top,width,h),{fontSize:size});
- const bodySize=fit(c.body,width-10,23,.5);
- edit(find(s,/^Lorem ipsum/),c.body,rect(left+1,top+h+26,width-10,height(c.body,bodySize,1.35)),{fontSize:bodySize});
+ // The body is short paragraphs that wrap, at one readable size.
+ const bodySize=c.bodySize??20,bodyTop=top+h+24,bottom=c.footnote?440:490;
+ const body=find(s,/^Lorem ipsum/);
+ edit(body,c.body,rect(left+1,bodyTop,width-10,bottom-bodyTop),{fontSize:bodySize,lineSpacing:1.1});
+ body.text=paragraphs(c.body,{typeface:'Inter',fontSize:`${bodySize}px`,color:black},12);
+ body.text.style={insets:0,autoFit:'none',wrap:'word',lineSpacing:1.1};
+ const need=lines(c.body).reduce((n,l)=>n+wrapped(l,width-10,bodySize)*bodySize*1.32+12,0);
+ if(need>bottom-bodyTop)throw new Error(`"${c.title}": body needs ${Math.ceil(need)}px of ${bottom-bodyTop}`);
  if(c.footnote)add(s,c.footnote,rect(left+1,448,width-10,29),17,black);
+}
+
+/** A dark panel of highlighted code: each line a paragraph, each token a run
+ * in the monospace face, sized so the longest line fits without wrapping. */
+function codePanel(s,c,box){
+ const pad=18,labelH=18;
+ const code=c.code.split('\n');
+ const longest=Math.max(...code.map(l=>l.length));
+ const inner=box.width-pad*2,avail=box.height-pad*2-labelH;
+ // JetBrains Mono advances 0.6em per character; leave a little slack.
+ const size=Math.min(c.codeSize??20,Math.floor(inner/(longest*.61)),Math.floor(avail/(code.length*1.3)));
+ if(size<14)throw new Error(`"${c.title}": code needs ${size}px to fit; trim it`);
+ // The panel hugs its code rather than filling the space it was given.
+ const textH=Math.ceil(code.length*size*1.3);
+ const panel=rect(box.left,box.top,box.width,pad*2+labelH+textH);
+ s.shapes.add({geometry:'rect',position:panel,fill:'#161616',line:{style:'solid',fill:'#2E2E2E',width:1},borderRadius:8});
+ add(s,languageName[c.lang],rect(box.left+box.width-pad-160,box.top+10,160,16),11,'#8C8C8C').text.style={insets:0,autoFit:'none',wrap:'none',alignment:'right'};
+ const x=s.shapes.add({geometry:'textbox',position:rect(box.left+pad,box.top+pad+labelH,inner,textH),fill:'none',line:{fill:'none',width:0}});
+ x.text=highlight(c.code,c.lang).map(tokens=>({runs:(tokens.length?tokens:[{text:' ',kind:'plain'}]).map(t=>({run:t.text,style:{typeface:mono,fontSize:`${size}px`,color:palette[t.kind],bold:false}}))}));
+ x.text.style={insets:0,autoFit:'none',wrap:'none',lineSpacing:1.12};
+ return panel.top+panel.height;
 }
 
 /** The black demo layout's title and kicker, its placeholder frame removed. */

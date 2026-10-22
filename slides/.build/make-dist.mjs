@@ -1,9 +1,11 @@
 // The whole deck pipeline: build → finalize → render with LibreOffice and
 // Inter → HTML preview and text notes → dist/. `node .build/make-dist.mjs`
 //
-// Needs the Codex presentations runtime (artifact-tool, validators, soffice)
-// and Inter TTFs (https://github.com/rsms/inter/releases,
-// Inter-{Regular,Medium,SemiBold,Bold,Light}.ttf). runtime.mjs lists the
+// Needs the Codex presentations runtime (artifact-tool, validators, soffice),
+// the Inter TTFs (https://github.com/rsms/inter/releases,
+// Inter-{Regular,Medium,SemiBold,Bold,Light}.ttf) and JetBrains Mono NL for
+// code (https://github.com/JetBrains/JetBrainsMono/releases,
+// JetBrainsMonoNL-Regular.ttf). runtime.mjs lists the
 // environment variables that locate each, with their defaults.
 import {fileURLToPath} from 'node:url';
 import {execFileSync} from 'node:child_process';
@@ -26,9 +28,10 @@ run(process.execPath,[path.join(build,'build.mjs')]);
 run(process.execPath,[path.join(build,'finalize.mjs')]);
 
 // Render the final .pptx the way PowerPoint-less viewers will see it, with
-// Inter installed through a private fontconfig.
-for(const weight of ['Regular','Medium','SemiBold','Bold','Light'])
- await fs.access(path.join(fonts,`Inter-${weight}.ttf`)).catch(()=>{throw new Error(`Missing ${fonts}/Inter-${weight}.ttf`)});
+// Inter and the code font installed through a private fontconfig.
+const faces=[...['Regular','Medium','SemiBold','Bold','Light'].map(w=>`Inter-${w}.ttf`),'JetBrainsMonoNL-Regular.ttf'];
+for(const face of faces)
+ await fs.access(path.join(fonts,face)).catch(()=>{throw new Error(`Missing ${fonts}/${face}`)});
 const cache=path.join(build,'font-cache');
 await fs.mkdir(cache,{recursive:true});
 const fontconfig=path.join(cache,'fonts.conf');

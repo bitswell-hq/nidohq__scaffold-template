@@ -1,6 +1,6 @@
 # Stellar smart accounts — Hack Meridian deck
 
-A 15-minute talk in 16 slides, followed by 15 appendix slides for questions,
+A 15-minute talk in 17 slides, followed by 13 appendix slides for questions,
 built on the
 [Hack Meridian Google Slides template](https://docs.google.com/presentation/d/1-HRAkfaI2YZQZzSWonXNrDxBCA1HZ4r_OjJ-YvP6lNM/edit).
 Every slide has a speaker script, timing, an optional stage cue, and sources in
@@ -19,11 +19,11 @@ its notes.
 | Part | Slides | Time |
 | --- | --- | --- |
 | Opening | 1 | 0:00–0:35 |
-| Why a C-address over a G-address: rules, what they buy you, and the trade-offs, including what Nido's relayer pays per account and grant | 2–6 | 0:35–5:00 |
-| Perch in one rule; Nido; the finding that the popup can't sign for your contract | 7–9 | 5:00–7:50 |
-| Walkthrough: the agent-built Kudos Jar on testnet, from approval to the account refusing a tip | 10–12 | 7:50–10:20 |
-| Building your own: when the wallet says "unknown", patterns from six teams, build your own, next step | 13–16 | 10:20–15:00 |
-| Appendix: more of what rules buy you, Perch in depth (documents, enforcement, verifiers, constructorless publishing, factories), what an app can ask Nido for, the rest of the walkthrough, what the agent tripped on, upstream findings, running Kudos Jar | 17–31 | backup |
+| Why a C-address over a G-address: the idea, `require_auth` on both, what rules buy you, and the trade-offs, including what Nido's relayer pays per account and grant | 2–6 | 0:35–5:00 |
+| Perch in one rule; Nido; the finding that the popup can't sign for your contract | 7–9 | 5:00–7:40 |
+| Walkthrough: the agent-built Kudos Jar on testnet, from approval to the account refusing a tip | 10–12 | 7:40–10:00 |
+| Building your own: when a grant doesn't confirm, patterns from six teams, the code that's yours to write, a pointer to the template's quick start, next step | 13–17 | 10:00–15:00 |
+| Appendix: Perch in depth (documents, enforcement, verifiers, constructorless publishing, factories), what an app can ask Nido for, the rest of the walkthrough, what the agent tripped on, upstream findings | 18–30 | backup |
 
 Facts about Nido and Perch are pinned to `nidohq/nido@4fee10d` and
 `stellar-registry/perch@2d1df9b`. Demo facts come from a live run of Kudos Jar,
@@ -36,8 +36,13 @@ cite it as plain text.
 ## Build
 
 Content lives in [`.build/content.mjs`](.build/content.mjs): one entry per slide
-naming a template layout (`title`, `bigIdea`, `steps`, `takeaways`,
-`topicLeft`, `topicRight`, `demo`, `code`, `next`) and its text. Entries marked
+naming a layout built on one of the template's slides (`title`, `bigIdea`,
+`points`, `topicLeft`, `topicRight`, `demo`, `code`, `next`) and its text. The
+layouts check that their text fits and throw if it doesn't. Code slides name a
+`lang` (`ts`, `rust`, `json`, or `trace` for an annotated authorization trace);
+[`.build/highlight.mjs`](.build/highlight.mjs) colors each token as its own
+text run in JetBrains Mono NL, so the highlighting is real slide text in the
+.pptx, the PDF and the preview. Entries marked
 `appendix` come after the closing slide and don't count toward the talk's time;
 [`.build/schedule.mjs`](.build/schedule.mjs) works out each slide's start.
 Screenshots of the Kudos Jar run are in [`assets/`](assets/).
@@ -52,10 +57,14 @@ That runs `build.mjs` (fill the template, write notes, render PNGs to
 preview), `notes.mjs` (`speaker-notes.md` and `slides.json`), and copies the
 results to `dist/`. `node .build/notes.mjs` on its own regenerates the text
 notes with nothing but Node. The full pipeline needs the Codex presentations
-runtime (artifact-tool, validators, `soffice`, `pdftoppm`) and the Inter TTFs
+runtime (artifact-tool, validators, `soffice`, `pdftoppm`), the Inter TTFs
 from <https://github.com/rsms/inter/releases>
-(`Inter-{Regular,Medium,SemiBold,Bold,Light}.ttf`, in `.build/fonts/` by
-default). [`.build/runtime.mjs`](.build/runtime.mjs) lists the environment
-variables that locate each (`CODEX_RUNTIME`, `PRESENTATIONS_SKILL`,
-`INTER_FONTS`, …) with their defaults; `make-dist.mjs` links
+(`Inter-{Regular,Medium,SemiBold,Bold,Light}.ttf`) and, for code,
+`JetBrainsMonoNL-Regular.ttf` from
+<https://github.com/JetBrains/JetBrainsMono/releases>, all in `.build/fonts/` by
+default. The no-ligatures face keeps `=>` and `->` as typed. Viewers without
+JetBrains Mono installed see a fallback monospace face in the .pptx; the PDF
+and the preview embed it. [`.build/runtime.mjs`](.build/runtime.mjs) lists the
+environment variables that locate each (`CODEX_RUNTIME`, `PRESENTATIONS_SKILL`,
+`DECK_FONTS`, …) with their defaults; `make-dist.mjs` links
 `.build/node_modules` to the runtime's packages. `output/` is scratch.
