@@ -169,6 +169,10 @@ jobs:
             exit 1
           fi
           echo "Generated $ACTUAL client(s)."
+      # Scaffold installs each new client with its own @stellar/stellar-sdk;
+      # fold them back onto app-lib's copy, as `clients:testnet` and
+      # `deploy:testnet` do, or `tsc` sees two AssembledTransaction types.
+      - run: npm run link-clients
       - run: npm run build --workspaces --if-present
       - name: Install Playwright browser
         run: npx playwright install --with-deps chromium
