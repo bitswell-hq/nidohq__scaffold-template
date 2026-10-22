@@ -59,7 +59,7 @@ describe("session grants", () => {
 	it("builds Nido's grant URL on the account's own subdomain", () => {
 		const url = new URL(
 			grantUrl({
-				base: "https://nido.fyi",
+				base: "https://test.nido.fyi",
 				account,
 				signer,
 				grant: {
@@ -72,7 +72,7 @@ describe("session grants", () => {
 				returnUrl: "http://127.0.0.1:5180/board",
 			}),
 		)
-		expect(url.host).toBe(`${account.toLowerCase()}.nido.fyi`)
+		expect(url.host).toBe(`${account.toLowerCase()}.test.nido.fyi`)
 		expect(url.pathname).toBe("/security/delegate-doc/")
 		expect(Object.fromEntries(url.searchParams)).toEqual({
 			origin: "http://127.0.0.1:5180",
@@ -99,7 +99,7 @@ describe("session grants", () => {
 		).toMatch(/^http:\/\/c[a-z0-9]+\.localhost:4321\//)
 		expect(() =>
 			grantUrl({
-				base: "https://nido.fyi",
+				base: "https://test.nido.fyi",
 				account,
 				signer,
 				grant: { ...grant, label: "a label that is far too long" },
@@ -240,7 +240,7 @@ const visit = (href: string) => {
 }
 const resume = (server = {} as rpc.Server) =>
 	resumeSession({
-		base: "https://nido.fyi",
+		base: "https://test.nido.fyi",
 		server,
 		networkPassphrase: Networks.TESTNET,
 	})
@@ -324,7 +324,7 @@ describe("asking for and resuming a session", () => {
 		void requestSession({
 			account,
 			grants: [play, spend],
-			base: "https://nido.fyi",
+			base: "https://test.nido.fyi",
 			friendbotUrl: (a) => a,
 		})
 		await vi.waitFor(() => expect(assign).toHaveBeenCalled())
@@ -342,7 +342,7 @@ describe("asking for and resuming a session", () => {
 		void requestSession({
 			account,
 			grants: [play],
-			base: "https://nido.fyi",
+			base: "https://test.nido.fyi",
 			friendbotUrl: (a) => `https://friendbot/?addr=${a}`,
 		})
 		await vi.waitFor(() => expect(assign).toHaveBeenCalled())

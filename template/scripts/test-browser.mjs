@@ -101,7 +101,7 @@ ${env
 	.join("\n")}
 
 Then open the app (npm run dev): http://localhost:${appPort ?? 5173}
-Create a Nido account at https://nido.fyi; it arrives with 5 test XLM.
+Create a Nido account at https://test.nido.fyi; it arrives with 5 test XLM.
 Ctrl-C closes Chrome.`)
 
 async function findChrome() {

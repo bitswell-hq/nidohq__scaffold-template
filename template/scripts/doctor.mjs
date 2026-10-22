@@ -245,11 +245,12 @@ if (deployerAddress) {
 		)
 }
 
-const nido = await get("https://nido.fyi/")
+const nidoBase = "https://test.nido.fyi"
+const nido = await get(`${nidoBase}/`)
 check(
 	"nido",
 	nido?.ok ? "ok" : "warn",
-	nido?.ok ? "https://nido.fyi reachable" : "https://nido.fyi unreachable",
+	`${nidoBase} ${nido?.ok ? "reachable" : "unreachable"}`,
 )
 
 // --- Dev server ----------------------------------------------------------------

@@ -11,6 +11,7 @@ import {
 	reserveCeremonyPopup,
 } from "@nidohq/stellar-wallets-kit-module"
 import {
+	NIDO_BASE,
 	createNidoModules,
 	isSmartAccount,
 	smartAccountBalance,
@@ -58,8 +59,7 @@ const CUSTOM_NETWORK_WALLETS = new Set(["freighter", "xbull", "hana"])
 export const xlmTokenId = Asset.native().contractId(networkPassphrase)
 
 /** The Nido deployment this app connects to (`PUBLIC_NIDO_BASE`). */
-export const nidoBase: string =
-	import.meta.env.PUBLIC_NIDO_BASE || "https://nido.fyi"
+export const nidoBase: string = import.meta.env.PUBLIC_NIDO_BASE || NIDO_BASE
 
 StellarWalletsKit.init({
 	network: networkPassphrase as Networks,
