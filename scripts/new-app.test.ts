@@ -35,6 +35,7 @@ describe("new-app", () => {
 		expect(read("folder", ".env")).toContain(`PORT=${port}`)
 		expect(read("folder", ".env.example")).toContain(`PORT=${port}`)
 		for (const left of [
+			".git",
 			".stellar-config",
 			".tools",
 			"node_modules",

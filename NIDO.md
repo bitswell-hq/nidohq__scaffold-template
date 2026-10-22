@@ -15,23 +15,34 @@ You need Node 22.12+, Rust with the `wasm32v1-none` target
 [Stellar CLI](https://developers.stellar.org/docs/tools/cli/install-cli). The
 project installs its own Scaffold.
 
-Start your own app from this checkout (in an app already made with `new-app`,
-start at `npm run tools:scaffold`):
+Start your own app from GitHub (in an app you already have, start at
+`npm run tools:scaffold`):
 
 ```sh
-npm run new-app -- ../my-app --blank   # --blank: a one-function starter instead of the sample
+stellar scaffold init --template nidohq/scaffold-template my-app
+cd my-app
+npm run tools:scaffold     # stellar-scaffold for this project, in .tools/ (seconds)
+npm ci                     # npm 11 prints allow-scripts warnings; they are harmless
+npm run doctor             # tools, testnet, keys and clients, with fixes
+npm run clients:testnet    # client for the shared Guess the Number deployment
+npm run dev                # the URL it prints
+```
+
+From a checkout of the template, `new-app` does the same with your local
+changes, and `--blank` swaps the sample for a one-function starter contract:
+
+```sh
+npm run new-app -- ../my-app --blank
 cd ../my-app
-npm run tools:scaffold                 # stellar-scaffold for this project, in .tools/ (seconds)
-npm ci                                 # npm 11 prints allow-scripts warnings; they are harmless
-npm run doctor                         # tools, testnet, keys and clients, with fixes
-npm run deploy:testnet                 # deploys contracts/check-in, pins its ID, writes its client
-npm run dev                            # the URL it prints, on the app's own port
+npm run tools:scaffold && npm ci && npm run doctor
+npm run deploy:testnet     # deploys contracts/check-in, pins its ID, writes its client
+npm run dev                # on the app's own port
 ```
 
 Without `--blank`, the copy keeps the Guess the Number sample; run
 `npm run clients:testnet` instead of `deploy:testnet` to use its shared
-deployment. To try the sample in this checkout itself, run the same commands
-from `tools:scaffold` on, after `cp .env.example .env`.
+deployment. To try the sample in the checkout itself, run the same commands from
+`tools:scaffold` on, after `cp .env.example .env`.
 
 Then open the app, press Connect and choose Nido. Without a Nido account yet,
 create one at https://test.nido.fyi: one passkey, and it arrives with 5 test
@@ -323,6 +334,4 @@ The v2 quick start, from a clean copy (details in the kit's
   Fund button is hidden for C-addresses.
 - This layout derives from the official React template at
   `stellar-scaffold/ui@505354435c43e8d7af19c84bcb198990e36f983b`, already in its
-  final `app/`, `app-lib/`, `contracts/` shape. Once published as a reviewed
-  repo and tag, `stellar scaffold init my-app --template ORG/REPO#TAG --yes`
-  works too; until then, `npm run new-app`.
+  final `app/`, `app-lib/`, `contracts/` shape.
