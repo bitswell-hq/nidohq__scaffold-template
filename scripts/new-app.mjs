@@ -2,8 +2,8 @@
 //
 //   npm run new-app -- ../my-app [--name my-app] [--blank] [--port 5310]
 //
-// `stellar scaffold init --template` only fetches GitHub `user/repo#ref`
-// sources, so an unpublished or locally modified template needs this instead.
+// `stellar scaffold init --template nidohq/scaffold-template` starts one from
+// GitHub; a locally modified checkout of the template needs this instead.
 // It copies the template's own files, leaving out installs, build output,
 // generated clients, keys, secrets and test artifacts, and makes the copy its
 // own, so apps on one machine don't collide: the package name and page title,
@@ -57,6 +57,7 @@ if (!Number.isInteger(port) || port < 1024 || port > 65535)
 	fail(`--port must be a number from 1024 to 65535`)
 
 const SKIP = new Set([
+	".git",
 	"node_modules",
 	"target",
 	"dist",
