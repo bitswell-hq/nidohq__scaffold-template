@@ -109,9 +109,16 @@ jobs:
             https://github.com/stellar-scaffold/cli "$RUNNER_TEMP/cli-src"
           cd "$RUNNER_TEMP/cli-src"
           cargo install --path crates/stellar-scaffold-cli --locked
+      # Pin the image to the tag stellar-scaffold itself runs ("Overriding docker
+      # image tag to use 'v678-b1525.1-testing'"), so the CLI reuses this
+      # container instead of building against whatever `latest` is. The
+      # 2026-10-22 `latest` (core and RPC v30.0.0, protocol 28) fails every
+      # contract upload in simulation with `Error(Context, InternalError)`.
+      # Bump it together with the CLI.
       - name: Start Stellar local network
         uses: stellar/quickstart@main
         with:
+          tag: "v678-b1525.1-testing"
           enable: "core,rpc"
       - name: Add master account as default identity
         run: |
