@@ -225,11 +225,11 @@ Perch compiles the document on chain, and the account enforces it in check-auth 
 - Passkey-native Perch accounts.
 - Connect, sign, or grant a session.
 - Creation and fees sponsored.
-- nido.fyi · TESTNET
+- test.nido.fyi · TESTNET
 
 **Script**
 
-Nido is the wallet people see, and every Nido account is a Perch account. You open nido.fyi, approve with your face or fingerprint, and you have a C-address on its own subdomain, created and funded with five test XLM by Nido's relayer.
+Nido is the wallet people see, and every Nido account is a Perch account. You open test.nido.fyi, approve with your face or fingerprint, and you have a C-address on its own subdomain, created and funded with five test XLM by Nido's relayer.
 
 From your app, Nido sits in Stellar Wallets Kit next to the usual wallets. You can ask it for three things: connect, which gives you the address; sign one transaction in a popup; or grant your app a scoped session. The third one turns out to matter most.
 
@@ -459,7 +459,7 @@ You're done when you have a passkey account, a confirmed transaction hash, and o
 
 - Give the app a rule, not your key.
 - Let the account say no.
-- nido.fyi  ·  testnet
+- test.nido.fyi  ·  testnet
 - github.com/nidohq/nido
 - github.com/stellar-registry/perch
 
@@ -471,7 +471,7 @@ Nido gives you the passkey wallet. Perch gives the account a policy you can read
 
 **Links** (not spoken)
 
-- <https://nido.fyi>
+- <https://test.nido.fyi>
 - <https://github.com/nidohq/nido/blob/4fee10dc55b877e828c5f9fe60cc6807ea10ea6e/README.md>
 - <https://github.com/stellar-registry/perch/blob/2d1df9b3eefbaa70c74bbf83ffb8f96cc9581f63/README.md>
 
@@ -681,7 +681,7 @@ The popup can only sign calls on the account itself, which is why apps use the s
 - LOCK: One passkey ceremony
 - FUNDED: 5 test XLM, fees sponsored
 - [Screenshot: Nido asking to create the account passkey for CBP72A…Z46QCJ]
-- nido.fyi on testnet
+- test.nido.fyi on testnet
 
 **Script**
 
@@ -836,7 +836,7 @@ The dry run added more for Nido: tell the app why the relayer refused, and let i
 
 To try the demo app tonight: clone the repository, go into examples slash kudos-jar, run npm ci, generate the client for the demo jar with clients-colon-testnet, and npm run dev.
 
-Create a Nido account at nido.fyi, connect, approve the session, and tip. To start your own app instead, follow the build-your-own slide: the template's NIDO.md has the rules for you, and AGENTS.md has them for your coding agent.
+Create a Nido account at test.nido.fyi, connect, approve the session, and tip. To start your own app instead, follow the build-your-own slide: the template's NIDO.md has the rules for you, and AGENTS.md has them for your coding agent.
 
 **Links** (not spoken)
 

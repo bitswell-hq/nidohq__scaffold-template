@@ -123,7 +123,7 @@ const layouts={
   blank(s,/\[QR CODE\]/);
   add(s,c.links,rect(54,291,580,73),18);
   const qr=await fs.readFile(path.join(build,'nido-qr.png'));
-  s.images.add({blob:qr,contentType:'image/png',position:rect(666,243,165,165),alt:'QR code to https://nido.fyi',fit:'contain'});
+  s.images.add({blob:qr,contentType:'image/png',position:rect(666,243,165,165),alt:'QR code to https://test.nido.fyi',fit:'contain'});
  }},
 };
 
