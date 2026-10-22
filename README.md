@@ -31,15 +31,15 @@ npm run clients:testnet && npm run dev
   copy, with a one-function starter contract in place of the sample.
 
 Nido is at <https://github.com/nidohq/nido>; the Perch policy language its
-accounts enforce is at <https://github.com/stellar-registry/perch>. The
-"Stellar smart accounts" talk built on this template lives at
+accounts enforce is at <https://github.com/stellar-registry/perch>. The "Stellar
+smart accounts" talk built on this template lives at
 <https://github.com/nidohq/smart-accounts-talk>.
 
 The one secret key in the tree, in
 [`.github/workflows/build.yml`](.github/workflows/build.yml), comes unchanged
-from the public upstream [stellar-scaffold/ui](https://github.com/stellar-scaffold/ui)
-workflow: it funds a throwaway identity on the CI job's local quickstart
-network.
+from the public upstream
+[stellar-scaffold/ui](https://github.com/stellar-scaffold/ui) workflow: it funds
+a throwaway identity on the CI job's local quickstart network.
 
 [License](LICENSE) · [Security](SECURITY.md) ·
 [Code of conduct](CODE_OF_CONDUCT.md)
