@@ -660,9 +660,19 @@ const RELAYER: Record<string, string> = {
 		"Nido's relayer is busy, so nothing was sent. Try again in a minute.",
 }
 
+const OVER_CAP =
+	"Your account refused: this would go over the spending cap you gave this app."
+
+/** Whether the account refused a call because it would go over a grant's
+ * spending cap (#3221). The account checks before anything is sent, so the
+ * refused call cost nothing. */
+export function isOverCap(error: unknown): boolean {
+	const message = error instanceof Error ? error.message : String(error)
+	return message.includes("#3221") || message.includes(OVER_CAP)
+}
+
 function accountRefusal(message: string): string | undefined {
-	if (message.includes("#3221"))
-		return "Your account refused: this would go over the spending cap you gave this app."
+	if (message.includes("#3221")) return OVER_CAP
 	if (message.includes("#3002") || message.includes("#3016"))
 		return "Your account refused: no approved rule covers this call for this app (it may have expired)."
 	if (message.includes("#3014"))

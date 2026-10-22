@@ -20,7 +20,9 @@ npm run tools:scaffold && npm ci && npm run doctor
 npm run clients:testnet && npm run dev
 ```
 
-`npm run doctor` says what is missing and how to fix it.
+`npm run doctor` says what is missing and how to fix it. Open the app, connect
+with Nido and approve the sample once: Guess the Number then plays without
+prompts, at 1 XLM a wrong guess, until the 2 XLM a day you allowed runs out.
 
 - **Building an app?** Read [`NIDO.md`](NIDO.md): the quick start, your own
   contract in five steps, the call pattern, the rules a Nido account follows,

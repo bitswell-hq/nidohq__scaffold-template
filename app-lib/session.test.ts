@@ -17,6 +17,7 @@ import {
 	describe as explain,
 	explainRefusal,
 	grantUrl,
+	isOverCap,
 	loadSession,
 	parseRules,
 	requestSession,
@@ -537,6 +538,11 @@ describe("describing errors", () => {
 	it("maps account refusals, relayer codes and the app's own errors", () => {
 		const errors = { 4: { message: "Already claimed" }, 5: "Sold out" }
 		expect(explain(new Error("Error(Contract, #3221)"))).toMatch(/cap/)
+		// Still recognisable after submitWithSession has explained it
+		expect(isOverCap(new Error(explainRefusal("Error(Contract, #3221)")))).toBe(
+			true,
+		)
+		expect(isOverCap("Error(Contract, #3002)")).toBe(false)
 		expect(explain("relay: FEE_LIMIT_EXCEEDED")).toMatch(/budget/)
 		expect(explain("POOL_CAPACITY")).toMatch(/busy/)
 		expect(explain("HostError: Error(Contract, #4)", errors)).toBe(

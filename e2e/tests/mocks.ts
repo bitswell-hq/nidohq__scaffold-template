@@ -64,7 +64,9 @@ export const approveAll: GrantAnswer = () => ({
 /**
  * Mock the testnet RPC, Friendbot and Nido's pages for `context`. `auth`
  * gives the auth entries a simulated call asks the account for (by function
- * name and contract), and `grantAnswer` plays the owner on Nido's grant page.
+ * name and contract), `grantAnswer` plays the owner on Nido's grant page, and
+ * `refuse` plays the account: an error it returns fails the enforced
+ * simulation of a session call (e.g. `Error(Contract, #3221)` over a cap).
  */
 export async function mockServices(
 	context: BrowserContext,
@@ -72,10 +74,12 @@ export async function mockServices(
 		signResult = `?nido_submitted=${hash}&kind=tx`,
 		grantAnswer = approveAll,
 		auth = () => [],
+		refuse = () => undefined,
 	}: {
 		signResult?: string
 		grantAnswer?: GrantAnswer
 		auth?: (method: string, target: string) => xdr.SorobanAuthorizationEntry[]
+		refuse?: () => string | undefined
 	} = {},
 ) {
 	const calls: string[] = []
@@ -105,24 +109,29 @@ export async function mockServices(
 				const call = op.func.invokeContract()
 				const method = call.functionName().toString()
 				const target = Address.fromScAddress(call.contractAddress()).toString()
+				const enforced =
+					(body.params as { authMode?: string }).authMode === "enforce"
+				const refusal = enforced ? refuse() : undefined
 				const retval =
 					method === "balance"
 						? nativeToScVal(125000000n, { type: "i128" })
 						: method === "installed_rules"
 							? installedRules(landed)
 							: nativeToScVal(false)
-				response = {
-					latestLedger: 100,
-					minResourceFee: "100",
-					transactionData: data,
-					events: [],
-					results: [
-						{
-							auth: auth(method, target).map((a) => a.toXDR("base64")),
-							xdr: retval.toXDR("base64"),
-						},
-					],
-				}
+				response = refusal
+					? { latestLedger: 100, error: refusal }
+					: {
+							latestLedger: 100,
+							minResourceFee: "100",
+							transactionData: data,
+							events: [],
+							results: [
+								{
+									auth: auth(method, target).map((a) => a.toXDR("base64")),
+									xdr: retval.toXDR("base64"),
+								},
+							],
+						}
 			} else if (body.method === "getTransaction") {
 				response = {
 					status: "SUCCESS",
