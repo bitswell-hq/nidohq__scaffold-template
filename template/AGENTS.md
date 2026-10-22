@@ -176,7 +176,7 @@ popup with virtual passkeys saved in `target/nido-passkeys.json`, and writes
 `target/test-browser.env` (`CHROME_DEVTOOLS_AXI_BROWSER_URL`,
 `CHROME_DEVTOOLS_AXI_SESSION`). Load it (`set -a; . target/test-browser.env`)
 and drive the browser, for example with chrome-devtools-axi. Create the account
-at https://nido.fyi; it arrives funded with 5 test XLM.
+at https://test.nido.fyi; it arrives funded with 5 test XLM.
 
 chrome-devtools-axi notes: refs go stale after any re-render, so take a fresh
 snapshot right before each click; `fill` may not update a React-controlled

@@ -1,6 +1,6 @@
 # Scaffold Stellar + Nido: template and talk
 
-Two things from building Stellar apps on [Nido](https://nido.fyi) smart
+Two things from building Stellar apps on [Nido](https://test.nido.fyi) smart
 accounts:
 
 - [`template/`](template/): a React app template for Stellar smart contracts

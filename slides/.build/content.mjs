@@ -104,8 +104,8 @@ This is a real rule from the demo you'll see. Scope: one contract, the XLM token
 Perch compiles the document on chain, and the account enforces it in check-auth on every call, denying by default. Verifiers, the registry and factories are in the appendix if you want the deep dive.`,
     sources:[perch('README.md'), perch('CANONICAL.md'), perch('docs/schema.md'), perch('crates/perch-doc-compiler/src/lib.rs'), example]},
   { layout:'topicRight', title:'Nido', seconds:45,
-    kicker:'THE WALLET', heading:'NIDO', body:'Passkey-native Perch accounts.\nConnect, sign, or grant a session.\nCreation and fees sponsored.', footnote:'nido.fyi · TESTNET', big:true,
-    script:`Nido is the wallet people see, and every Nido account is a Perch account. You open nido.fyi, approve with your face or fingerprint, and you have a C-address on its own subdomain, created and funded with five test XLM by Nido's relayer.
+    kicker:'THE WALLET', heading:'NIDO', body:'Passkey-native Perch accounts.\nConnect, sign, or grant a session.\nCreation and fees sponsored.', footnote:'test.nido.fyi · TESTNET', big:true,
+    script:`Nido is the wallet people see, and every Nido account is a Perch account. You open test.nido.fyi, approve with your face or fingerprint, and you have a C-address on its own subdomain, created and funded with five test XLM by Nido's relayer.
 
 From your app, Nido sits in Stellar Wallets Kit next to the usual wallets. You can ask it for three things: connect, which gives you the address; sign one transaction in a popup; or grant your app a scoped session. The third one turns out to matter most.`,
     sources:[nido('README.md'), nido('docs/ADD-NIDO-TO-DAPP.md'), nido('infra/relayer/README.md')]},
@@ -185,11 +185,11 @@ To find your grants, assert env.auths in a unit test: one Grant per contract in 
 You're done when you have a passkey account, a confirmed transaction hash, and one refusal from the account itself. The template's NIDO.md has the details for you, and AGENTS.md for your coding agent.`,
     sources:[template+' (Quick start; Your own contract in five steps; Calling a contract from React)', agents, tpl('CHANGELOG.md'), tpl('app-lib/wallet.ts'), tpl('app/src/components/SessionGate.tsx'), report+' §5.1 D-H1, D-A2, D-A4']},
   { layout:'next', title:'Your first smart account app', seconds:40,
-    kicker:'KEEP BUILDING', heading:'YOUR FIRST SMART ACCOUNT APP', body:'Give the app a rule, not your key.\nLet the account say no.', links:'nido.fyi  ·  testnet\ngithub.com/nidohq/nido\ngithub.com/stellar-registry/perch',
+    kicker:'KEEP BUILDING', heading:'YOUR FIRST SMART ACCOUNT APP', body:'Give the app a rule, not your key.\nLet the account say no.', links:'test.nido.fyi  ·  testnet\ngithub.com/nidohq/nido\ngithub.com/stellar-registry/perch',
     script:`For your hackathon project: pick the one action your app takes for a user, write down the rule that should bound it, and let the account enforce it. Ask for that rule once, in plain words, and then get out of the user's way.
 
 Nido gives you the passkey wallet. Perch gives the account a policy you can read. The template gives you a working start. The QR code opens Nido's testnet wallet. Thank you.`,
-    sources:['https://nido.fyi', nido('README.md'), perch('README.md')],
+    sources:['https://test.nido.fyi', nido('README.md'), perch('README.md')],
     cue:'Leave this slide up for questions; the appendix follows.'},
 
   // ── Appendix: backup for questions ────────────────────────────────────
@@ -261,7 +261,7 @@ The popup can only sign calls on the account itself, which is why apps use the s
   { layout:'demo', title:'Walkthrough: a passkey account', seconds:35, appendix:true,
     kicker:'WALKTHROUGH · SIGN IN', heading:'A PASSKEY ACCOUNT', labels:['RESERVE','LOCK','FUNDED'], bodies:['The C-address exists first','One passkey ceremony','5 test XLM, fees sponsored'],
     image:{file:'01-nido-create-passkey.png', crop:{left:.34,top:.13,right:.34,bottom:.12}, alt:'Nido asking to create the account passkey for CBP72A…Z46QCJ'},
-    caption:'nido.fyi on testnet',
+    caption:'test.nido.fyi on testnet',
     script:`The walkthrough starts on Nido. Nido reserves the account's address first, here CBP7-something, and then asks for a passkey, which gets bound to that address's own subdomain.
 
 One ceremony, and the relayer deploys the account and funds it with five test XLM. The person never needed XLM, a seed phrase, or a browser extension. It took a minute or two, most of it waiting for the network.`,
@@ -314,7 +314,7 @@ The dry run added more for Nido: tell the app why the relayer refused, and let i
     kicker:'TRY IT TONIGHT', heading:'RUN KUDOS JAR', rows:['npm ci','npm run clients:testnet','npm run dev','Create a Nido, approve, tip'],
     script:`To try the demo app tonight: clone the repository, go into examples slash kudos-jar, run npm ci, generate the client for the demo jar with clients-colon-testnet, and npm run dev.
 
-Create a Nido account at nido.fyi, connect, approve the session, and tip. To start your own app instead, follow the build-your-own slide: the template's NIDO.md has the rules for you, and AGENTS.md has them for your coding agent.`,
+Create a Nido account at test.nido.fyi, connect, approve the session, and tip. To start your own app instead, follow the build-your-own slide: the template's NIDO.md has the rules for you, and AGENTS.md has them for your coding agent.`,
     sources:[example, template],
     cue:'Have the app open in a tab as a fallback if the network is slow.'},
 ];

@@ -193,10 +193,10 @@
           "Passkey-native Perch accounts.",
           "Connect, sign, or grant a session.",
           "Creation and fees sponsored.",
-          "nido.fyi · TESTNET"
+          "test.nido.fyi · TESTNET"
         ]
       },
-      "script": "Nido is the wallet people see, and every Nido account is a Perch account. You open nido.fyi, approve with your face or fingerprint, and you have a C-address on its own subdomain, created and funded with five test XLM by Nido's relayer.\n\nFrom your app, Nido sits in Stellar Wallets Kit next to the usual wallets. You can ask it for three things: connect, which gives you the address; sign one transaction in a popup; or grant your app a scoped session. The third one turns out to matter most.",
+      "script": "Nido is the wallet people see, and every Nido account is a Perch account. You open test.nido.fyi, approve with your face or fingerprint, and you have a C-address on its own subdomain, created and funded with five test XLM by Nido's relayer.\n\nFrom your app, Nido sits in Stellar Wallets Kit next to the usual wallets. You can ask it for three things: connect, which gives you the address; sign one transaction in a popup; or grant your app a scoped session. The third one turns out to matter most.",
       "links": [
         "https://github.com/nidohq/nido/blob/4fee10dc55b877e828c5f9fe60cc6807ea10ea6e/README.md",
         "https://github.com/nidohq/nido/blob/4fee10dc55b877e828c5f9fe60cc6807ea10ea6e/docs/ADD-NIDO-TO-DAPP.md",
@@ -407,14 +407,14 @@
         "text": [
           "Give the app a rule, not your key.",
           "Let the account say no.",
-          "nido.fyi  ·  testnet",
+          "test.nido.fyi  ·  testnet",
           "github.com/nidohq/nido",
           "github.com/stellar-registry/perch"
         ]
       },
       "script": "For your hackathon project: pick the one action your app takes for a user, write down the rule that should bound it, and let the account enforce it. Ask for that rule once, in plain words, and then get out of the user's way.\n\nNido gives you the passkey wallet. Perch gives the account a policy you can read. The template gives you a working start. The QR code opens Nido's testnet wallet. Thank you.",
       "links": [
-        "https://nido.fyi",
+        "https://test.nido.fyi",
         "https://github.com/nidohq/nido/blob/4fee10dc55b877e828c5f9fe60cc6807ea10ea6e/README.md",
         "https://github.com/stellar-registry/perch/blob/2d1df9b3eefbaa70c74bbf83ffb8f96cc9581f63/README.md"
       ]
@@ -611,7 +611,7 @@
           "LOCK: One passkey ceremony",
           "FUNDED: 5 test XLM, fees sponsored",
           "[Screenshot: Nido asking to create the account passkey for CBP72A…Z46QCJ]",
-          "nido.fyi on testnet"
+          "test.nido.fyi on testnet"
         ]
       },
       "script": "The walkthrough starts on Nido. Nido reserves the account's address first, here CBP7-something, and then asks for a passkey, which gets bound to that address's own subdomain.\n\nOne ceremony, and the relayer deploys the account and funds it with five test XLM. The person never needed XLM, a seed phrase, or a browser extension. It took a minute or two, most of it waiting for the network.",
@@ -747,7 +747,7 @@
           "4. Create a Nido, approve, tip"
         ]
       },
-      "script": "To try the demo app tonight: clone the repository, go into examples slash kudos-jar, run npm ci, generate the client for the demo jar with clients-colon-testnet, and npm run dev.\n\nCreate a Nido account at nido.fyi, connect, approve the session, and tip. To start your own app instead, follow the build-your-own slide: the template's NIDO.md has the rules for you, and AGENTS.md has them for your coding agent.",
+      "script": "To try the demo app tonight: clone the repository, go into examples slash kudos-jar, run npm ci, generate the client for the demo jar with clients-colon-testnet, and npm run dev.\n\nCreate a Nido account at test.nido.fyi, connect, approve the session, and tip. To start your own app instead, follow the build-your-own slide: the template's NIDO.md has the rules for you, and AGENTS.md has them for your coding agent.",
       "links": [
         "Kudos Jar, an agent-built demo app run live on testnet, Oct 2026",
         "template/NIDO.md"
