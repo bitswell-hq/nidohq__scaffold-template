@@ -16,6 +16,8 @@ import {
 export const account = StrKey.encodeContract(Buffer.alloc(32, 1))
 export const source = StrKey.encodeEd25519PublicKey(Buffer.alloc(32, 2))
 export const hash = "ab".repeat(32)
+// The hosted wallet (app-lib NIDO_BASE) and its account subdomains.
+const nidoWallet = /https:\/\/([^/]+\.)?test\.nido\.fyi\//
 const data = new SorobanDataBuilder().build().toXDR("base64")
 const envelope = new TransactionBuilder(new Account(source, "0"), {
 	fee: "100",
@@ -161,7 +163,7 @@ export async function mockServices(
 		funded.push(new URL(route.request().url()).searchParams.get("addr")!)
 		return route.fulfill({ json: { successful: true } })
 	})
-	await context.route(/https:\/\/([^/]+\.)?nido\.fyi\//, async (route) => {
+	await context.route(nidoWallet, async (route) => {
 		const url = new URL(route.request().url())
 		if (url.pathname === "/security/delegate-doc/") {
 			// The owner approves (or not) on Nido's page; it sends them back.

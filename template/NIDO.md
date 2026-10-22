@@ -34,9 +34,9 @@ deployment. To try the sample in this checkout itself, run the same commands
 from `tools:scaffold` on, after `cp .env.example .env`.
 
 Then open the app, press Connect and choose Nido. Without a Nido account yet,
-create one at https://nido.fyi: one passkey, and it arrives with 5 test XLM.
-Back in the app, approve the session (one passkey confirmation per grant), and
-each call after that goes through without a prompt.
+create one at https://test.nido.fyi: one passkey, and it arrives with 5 test
+XLM. Back in the app, approve the session (one passkey confirmation per grant),
+and each call after that goes through without a prompt.
 
 `new-app` gives the copy its own package name, page title, deployer identity
 (`<name>-deployer`) and dev-server port, so several apps on one machine don't
@@ -160,9 +160,9 @@ cannot authorize a call into your contract**: the account refuses with `#3002`
 
 1. The app makes an ed25519 key and has Friendbot fund it, so it can pay fees.
 2. For each grant, the owner goes to
-   `https://<account>.nido.fyi/security/delegate-doc/`, sees exactly what the
-   rule allows, confirms with the passkey, and Nido applies the updated policy
-   document (`apply_doc`) through its relayer.
+   `https://<account>.test.nido.fyi/security/delegate-doc/`, sees exactly what
+   the rule allows, confirms with the passkey, and Nido applies the updated
+   policy document (`apply_doc`) through its relayer.
 3. The app signs later calls itself: a CAP-0071 `AddressWithDelegates` entry for
    the account, naming the approved rule for each contract, signed by its key.
    The key pays the fee; the account pays everything else, and checks the rule
@@ -261,7 +261,7 @@ contract ID.
 For the real thing without a person, `npm run test-browser` starts a throwaway
 Chrome whose every tab and popup has a virtual passkey, and prints the settings
 for a browser driver such as chrome-devtools-axi. Create the account at
-https://nido.fyi in that browser.
+https://test.nido.fyi in that browser.
 
 ### Verified live on testnet
 

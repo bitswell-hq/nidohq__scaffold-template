@@ -14,11 +14,11 @@ import {
 
 export const isSmartAccount = StrKey.isValidContract
 
+/** Hosted Nido's testnet wallet; apps override it with `PUBLIC_NIDO_BASE`. */
+export const NIDO_BASE = "https://test.nido.fyi"
+
 // Hosted Nido is testnet-only. Do not advertise it on incompatible networks.
-export function createNidoModules(
-	passphrase: string,
-	base = "https://nido.fyi",
-) {
+export function createNidoModules(passphrase: string, base = NIDO_BASE) {
 	return passphrase === Networks.TESTNET
 		? [new NidoModule({ base, networkPassphrase: passphrase })]
 		: []
