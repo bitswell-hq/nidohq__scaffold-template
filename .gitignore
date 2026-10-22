@@ -1,0 +1,14 @@
+node_modules/
+target/
+.DS_Store
+# Deck build scratch, caches and machine-specific files
+slides/output/
+slides/.build/node_modules
+slides/.build/fonts/
+slides/.build/font-cache/
+slides/.build/*-render/
+slides/.build/render/
+slides/.build/candidate.pptx
+slides/.build/*.inspect.ndjson
+slides/.build/final-inspect.json
+slides/.build/validation.json

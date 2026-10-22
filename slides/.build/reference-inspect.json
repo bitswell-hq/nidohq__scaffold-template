@@ -1,0 +1,1921 @@
+[
+  {
+    "id": "sl/y90nupkv",
+    "index": 0,
+    "layout": {
+      "id": "ly/ux4ruhcv",
+      "name": "TITLE"
+    },
+    "elements": [
+      {
+        "id": "sh/kvqx0vqd",
+        "kind": "shape",
+        "position": {
+          "left": 0,
+          "top": -1.09,
+          "width": 960,
+          "height": 540
+        },
+        "style": {
+          "fontSize": 18.67,
+          "typeface": "Arial",
+          "color": "#000000",
+          "alignment": "center"
+        }
+      },
+      {
+        "id": "sh/lwzy90ry",
+        "kind": "textbox",
+        "text": "Y O U R   W A Y  -  H A C K  M E R I D I A N   A C T I V A T I O N",
+        "position": {
+          "left": 51.43,
+          "top": 153.64,
+          "width": 432.54,
+          "height": 35.56
+        },
+        "style": {
+          "fontSize": 13.33,
+          "typeface": "Inter",
+          "color": "#000000",
+          "bold": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/yt8fyl87",
+        "kind": "textbox",
+        "text": "TITLE",
+        "position": {
+          "left": 41.74,
+          "top": 184.39,
+          "width": 364.57,
+          "height": 82.43
+        },
+        "style": {
+          "fontSize": 52,
+          "typeface": "Inter SemiBold",
+          "color": "#000000",
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/juhg7q9s",
+        "kind": "textbox",
+        "text": "Name - Role",
+        "position": {
+          "left": 42.37,
+          "top": 277.43,
+          "width": 364.57,
+          "height": 48.47
+        },
+        "style": {
+          "fontSize": 24,
+          "typeface": "Inter",
+          "color": "#000000",
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "im/za9wvypo",
+        "kind": "image",
+        "position": {
+          "left": 537.29,
+          "top": -1.09,
+          "width": 422.71,
+          "height": 539.72
+        }
+      },
+      {
+        "id": "im/y90f2t83",
+        "kind": "image",
+        "position": {
+          "left": 26.42,
+          "top": 25.84,
+          "width": 120.73,
+          "height": 21
+        }
+      },
+      {
+        "id": "im/2poza1sb",
+        "kind": "image",
+        "position": {
+          "left": 26.43,
+          "top": 486.79,
+          "width": 101.52,
+          "height": 26.19
+        }
+      }
+    ]
+  },
+  {
+    "id": "sl/hwbqtkby",
+    "index": 1,
+    "layout": {
+      "id": "ly/ux4ruhcv",
+      "name": "TITLE"
+    },
+    "elements": [
+      {
+        "id": "sh/wf6hcnyd",
+        "kind": "shape",
+        "position": {
+          "left": 0,
+          "top": -1.09,
+          "width": 960,
+          "height": 540
+        },
+        "style": {
+          "fontSize": 18.67,
+          "typeface": "Arial",
+          "color": "#000000",
+          "alignment": "center"
+        }
+      },
+      {
+        "id": "sh/ved0jihs",
+        "kind": "textbox",
+        "text": "Y O U R   W A Y  -  H A C K  M E R I D I A N   A C T I V A T I O N",
+        "position": {
+          "left": 51.43,
+          "top": 153.64,
+          "width": 432.54,
+          "height": 35.56
+        },
+        "style": {
+          "fontSize": 13.33,
+          "typeface": "Inter",
+          "color": "#000000",
+          "bold": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/ad4zadg7",
+        "kind": "textbox",
+        "text": "BUILD WITH STELLAR RAVEN",
+        "position": {
+          "left": 41.74,
+          "top": 184.39,
+          "width": 428.63,
+          "height": 145.45
+        },
+        "style": {
+          "fontSize": 52,
+          "typeface": "Inter Medium",
+          "color": "#000000",
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/9svih8zm",
+        "kind": "textbox",
+        "text": "John Smith - Dev Rel  SDF",
+        "position": {
+          "left": 42.37,
+          "top": 316.52,
+          "width": 364.57,
+          "height": 48.47
+        },
+        "style": {
+          "fontSize": 24,
+          "typeface": "Inter",
+          "color": "#000000",
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "im/r6l0rexo",
+        "kind": "image",
+        "position": {
+          "left": 538.58,
+          "top": -1.09,
+          "width": 422.71,
+          "height": 539.72
+        }
+      },
+      {
+        "id": "im/90b2dcz6",
+        "kind": "image",
+        "position": {
+          "left": 26.42,
+          "top": 25.84,
+          "width": 120.73,
+          "height": 21
+        }
+      },
+      {
+        "id": "im/8z2l47yl",
+        "kind": "image",
+        "position": {
+          "left": 26.43,
+          "top": 486.79,
+          "width": 101.52,
+          "height": 26.19
+        }
+      }
+    ]
+  },
+  {
+    "id": "sl/ofy9wn61",
+    "index": 2,
+    "layout": {
+      "id": "ly/ux4ruhcv",
+      "name": "TITLE"
+    },
+    "elements": [
+      {
+        "id": "im/gvm98j6x",
+        "kind": "image",
+        "position": {
+          "left": 0,
+          "top": 0,
+          "width": 264.57,
+          "height": 540
+        }
+      },
+      {
+        "id": "sh/adszm14j",
+        "kind": "textbox",
+        "text": "SESSION AGENDA",
+        "position": {
+          "left": 279.72,
+          "top": 81.23,
+          "width": 503.53,
+          "height": 82.43
+        },
+        "style": {
+          "fontSize": 52,
+          "typeface": "Inter Medium",
+          "color": "#000000",
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/dkzy5cn6",
+        "kind": "textbox",
+        "text": "01",
+        "position": {
+          "left": 282.23,
+          "top": 177.41,
+          "width": 62.14,
+          "height": 53.32
+        },
+        "style": {
+          "fontSize": 28,
+          "typeface": "Inter",
+          "color": "#000000",
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/cjqhc7ml",
+        "kind": "textbox",
+        "text": "T O D A Y ‘ S   R O U T E",
+        "position": {
+          "left": 292.52,
+          "top": 22.94,
+          "width": 323.65,
+          "height": 33.92
+        },
+        "style": {
+          "fontSize": 12,
+          "typeface": "Inter",
+          "color": "#000000",
+          "bold": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/436lcve1",
+        "kind": "textbox",
+        "text": "Opening idea",
+        "position": {
+          "left": 354.59,
+          "top": 182.81,
+          "width": 364.57,
+          "height": 45.26
+        },
+        "style": {
+          "fontSize": 21.33,
+          "typeface": "Inter",
+          "color": "#000000",
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/54fm50vm",
+        "kind": "textbox",
+        "text": "05 MIN",
+        "position": {
+          "left": 732.53,
+          "top": 187.95,
+          "width": 107.43,
+          "height": 38.77
+        },
+        "style": {
+          "fontSize": 16,
+          "typeface": "Inter",
+          "color": "#000000",
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/ih43alwv",
+        "kind": "shape",
+        "position": {
+          "left": 554.97,
+          "top": -26.39,
+          "width": 0.91,
+          "height": 529.13
+        },
+        "style": {
+          "fontSize": 18.67,
+          "typeface": "Arial",
+          "color": "#000000",
+          "alignment": "center"
+        }
+      },
+      {
+        "id": "sh/3id43qdg",
+        "kind": "shape",
+        "position": {
+          "left": 554.97,
+          "top": 45.11,
+          "width": 0.91,
+          "height": 529.13
+        },
+        "style": {
+          "fontSize": 18.67,
+          "typeface": "Arial",
+          "color": "#000000",
+          "alignment": "center"
+        }
+      },
+      {
+        "id": "sh/gfml8ve5",
+        "kind": "shape",
+        "position": {
+          "left": 554.97,
+          "top": 116.61,
+          "width": 0.91,
+          "height": 529.13
+        },
+        "style": {
+          "fontSize": 18.67,
+          "typeface": "Arial",
+          "color": "#000000",
+          "alignment": "center"
+        }
+      },
+      {
+        "id": "sh/hgvm1gvq",
+        "kind": "shape",
+        "position": {
+          "left": 554.97,
+          "top": 188.11,
+          "width": 0.91,
+          "height": 529.13
+        },
+        "style": {
+          "fontSize": 18.67,
+          "typeface": "Arial",
+          "color": "#000000",
+          "alignment": "center"
+        }
+      },
+      {
+        "id": "sh/ud436lwz",
+        "kind": "textbox",
+        "text": "02",
+        "position": {
+          "left": 282.23,
+          "top": 247.49,
+          "width": 62.14,
+          "height": 53.32
+        },
+        "style": {
+          "fontSize": 28,
+          "typeface": "Inter",
+          "color": "#000000",
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/ved4zqdk",
+        "kind": "textbox",
+        "text": "Core concept",
+        "position": {
+          "left": 354.59,
+          "top": 252.89,
+          "width": 364.57,
+          "height": 45.26
+        },
+        "style": {
+          "fontSize": 21.33,
+          "typeface": "Inter",
+          "color": "#000000",
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/0bq5kfu9",
+        "kind": "textbox",
+        "text": "15 MIN",
+        "position": {
+          "left": 732.53,
+          "top": 258.03,
+          "width": 107.43,
+          "height": 38.77
+        },
+        "style": {
+          "fontSize": 16,
+          "typeface": "Inter",
+          "color": "#000000",
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/1czmdkvu",
+        "kind": "textbox",
+        "text": "03",
+        "position": {
+          "left": 282.23,
+          "top": 317.63,
+          "width": 62.14,
+          "height": 53.32
+        },
+        "style": {
+          "fontSize": 28,
+          "typeface": "Inter",
+          "color": "#000000",
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/b61o3exw",
+        "kind": "textbox",
+        "text": "Demo / Case study",
+        "position": {
+          "left": 354.59,
+          "top": 323.03,
+          "width": 364.57,
+          "height": 45.26
+        },
+        "style": {
+          "fontSize": 21.33,
+          "typeface": "Inter",
+          "color": "#000000",
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/a5s7a9gb",
+        "kind": "textbox",
+        "text": "20 MIN",
+        "position": {
+          "left": 732.53,
+          "top": 328.17,
+          "width": 107.43,
+          "height": 38.77
+        },
+        "style": {
+          "fontSize": 16,
+          "typeface": "Inter",
+          "color": "#000000",
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/x8jq5of2",
+        "kind": "textbox",
+        "text": "04",
+        "position": {
+          "left": 282.23,
+          "top": 389.52,
+          "width": 62.14,
+          "height": 53.32
+        },
+        "style": {
+          "fontSize": 28,
+          "typeface": "Inter",
+          "color": "#000000",
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/w7apcjyh",
+        "kind": "textbox",
+        "text": "Questions + Next step",
+        "position": {
+          "left": 354.59,
+          "top": 394.92,
+          "width": 364.57,
+          "height": 45.26
+        },
+        "style": {
+          "fontSize": 21.33,
+          "typeface": "Inter",
+          "color": "#000000",
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/jul87yx8",
+        "kind": "textbox",
+        "text": "10 MIN",
+        "position": {
+          "left": 732.53,
+          "top": 400.06,
+          "width": 107.43,
+          "height": 38.77
+        },
+        "style": {
+          "fontSize": 16,
+          "typeface": "Inter",
+          "color": "#000000",
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "im/5gbyxcz2",
+        "kind": "image",
+        "position": {
+          "left": 814.71,
+          "top": 26.75,
+          "width": 120.73,
+          "height": 21
+        }
+      },
+      {
+        "id": "im/idkzmhgb",
+        "kind": "image",
+        "position": {
+          "left": 854.03,
+          "top": 484.78,
+          "width": 81.4,
+          "height": 21
+        }
+      }
+    ]
+  },
+  {
+    "id": "sl/jyx0ra1s",
+    "index": 3,
+    "layout": {
+      "id": "ly/4v2ps7ql",
+      "name": "TITLE_AND_BODY"
+    },
+    "elements": [
+      {
+        "id": "sh/j6tsbyls",
+        "kind": "shape",
+        "position": {
+          "left": 0,
+          "top": -1.09,
+          "width": 960,
+          "height": 540
+        },
+        "style": {
+          "fontSize": 18.67,
+          "typeface": "Arial",
+          "color": "#000000",
+          "alignment": "center"
+        }
+      },
+      {
+        "id": "sh/k72t43md",
+        "kind": "textbox",
+        "text": "R O L E  -  C O M P A N Y",
+        "position": {
+          "left": 368.95,
+          "top": 207.86,
+          "width": 432.54,
+          "height": 38.77
+        },
+        "style": {
+          "fontSize": 16,
+          "typeface": "Inter",
+          "color": "#434343",
+          "bold": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/l8bad83y",
+        "kind": "textbox",
+        "text": "FIRST NAME\nLAST NAME",
+        "position": {
+          "left": 359.02,
+          "top": 76.23,
+          "width": 364.57,
+          "height": 132.5
+        },
+        "style": {
+          "fontSize": 46.67,
+          "typeface": "Inter SemiBold",
+          "color": "#000000",
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/ah0byt4b",
+        "kind": "textbox",
+        "text": "Two or three concise sentences establishing the speaker’s experience and connection to today’s topic.",
+        "position": {
+          "left": 361.16,
+          "top": 258.74,
+          "width": 364.57,
+          "height": 122.8
+        },
+        "style": {
+          "fontSize": 21.33,
+          "typeface": "Inter",
+          "color": "#000000",
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/bi9s7ylw",
+        "kind": "textbox",
+        "text": "S P E A K E R",
+        "position": {
+          "left": 52.52,
+          "top": 22.94,
+          "width": 323.65,
+          "height": 33.92
+        },
+        "style": {
+          "fontSize": 12,
+          "typeface": "Inter",
+          "color": "#000000",
+          "bold": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "im/pobmp4j6",
+        "kind": "image",
+        "position": {
+          "left": 52.7,
+          "top": 94.49,
+          "width": 274.02,
+          "height": 274.02
+        }
+      },
+      {
+        "id": "im/on25wzi1",
+        "kind": "image",
+        "position": {
+          "left": 814.71,
+          "top": 26.75,
+          "width": 120.73,
+          "height": 21
+        }
+      },
+      {
+        "id": "im/bqt4rehc",
+        "kind": "image",
+        "position": {
+          "left": 854.03,
+          "top": 484.78,
+          "width": 81.4,
+          "height": 21
+        }
+      }
+    ]
+  },
+  {
+    "id": "sl/i107q5of",
+    "index": 4,
+    "layout": {
+      "id": "ly/4v2ps7ql",
+      "name": "TITLE_AND_BODY"
+    },
+    "elements": [
+      {
+        "id": "sh/y10ru9gr",
+        "kind": "shape",
+        "position": {
+          "left": -0.91,
+          "top": -1.09,
+          "width": 960,
+          "height": 540
+        },
+        "style": {
+          "fontSize": 18.67,
+          "typeface": "Arial",
+          "color": "#000000",
+          "alignment": "center"
+        }
+      },
+      {
+        "id": "sh/9sbatoze",
+        "kind": "textbox",
+        "text": "R O L E  -  C O M P A N Y",
+        "position": {
+          "left": 369.85,
+          "top": 207.86,
+          "width": 432.54,
+          "height": 38.77
+        },
+        "style": {
+          "fontSize": 16,
+          "typeface": "Inter",
+          "color": "#FDDA24",
+          "bold": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/8r2903yt",
+        "kind": "textbox",
+        "text": "FIRST NAME\nLAST NAME",
+        "position": {
+          "left": 359.02,
+          "top": 76.23,
+          "width": 364.57,
+          "height": 132.5
+        },
+        "style": {
+          "fontSize": 46.67,
+          "typeface": "Inter SemiBold",
+          "color": "#FFFFFF",
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/nqtsryh8",
+        "kind": "textbox",
+        "text": "Two or three concise sentences establishing the speaker’s experience and connection to today’s topic.",
+        "position": {
+          "left": 361.16,
+          "top": 258.75,
+          "width": 427.56,
+          "height": 96.94
+        },
+        "style": {
+          "fontSize": 21.33,
+          "typeface": "Inter Light",
+          "color": "#FFFFFF",
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/mp0rytgn",
+        "kind": "textbox",
+        "text": "S P E A K E R",
+        "position": {
+          "left": 52.52,
+          "top": 22.94,
+          "width": 323.65,
+          "height": 33.92
+        },
+        "style": {
+          "fontSize": 12,
+          "typeface": "Inter",
+          "color": "#FFFFFF",
+          "bold": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "im/4vq1g7qd",
+        "kind": "image",
+        "position": {
+          "left": 53.61,
+          "top": 94.49,
+          "width": 274.02,
+          "height": 274.02
+        }
+      },
+      {
+        "id": "im/5wj2psry",
+        "kind": "image",
+        "position": {
+          "left": 813.26,
+          "top": 27.26,
+          "width": 120.73,
+          "height": 21
+        }
+      },
+      {
+        "id": "im/dcfitsz2",
+        "kind": "image",
+        "position": {
+          "left": 850.56,
+          "top": 496.95,
+          "width": 83.42,
+          "height": 21.52
+        }
+      }
+    ]
+  },
+  {
+    "id": "sl/x8f69ofe",
+    "index": 5,
+    "layout": {
+      "id": "ly/4v2ps7ql",
+      "name": "TITLE_AND_BODY"
+    },
+    "elements": [
+      {
+        "id": "sh/id4vqlsr",
+        "kind": "shape",
+        "position": {
+          "left": 0,
+          "top": -1.09,
+          "width": 960,
+          "height": 540
+        },
+        "style": {
+          "fontSize": 18.67,
+          "typeface": "Arial",
+          "color": "#000000",
+          "alignment": "center"
+        }
+      },
+      {
+        "id": "im/cjilgzmh",
+        "kind": "image",
+        "position": {
+          "left": 0,
+          "top": -1.09,
+          "width": 960,
+          "height": 540
+        }
+      },
+      {
+        "id": "sh/4fmdsvax",
+        "kind": "textbox",
+        "text": "“ONE CLEAR, MEMORABLE STATEMENT”",
+        "position": {
+          "left": 206.29,
+          "top": 120.78,
+          "width": 443.37,
+          "height": 208.47
+        },
+        "style": {
+          "fontSize": 52,
+          "typeface": "Inter SemiBold",
+          "color": "#FFFFFF",
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/nahwbutw",
+        "kind": "textbox",
+        "text": "Name Name",
+        "position": {
+          "left": 217.13,
+          "top": 327.27,
+          "width": 432.54,
+          "height": 38.77
+        },
+        "style": {
+          "fontSize": 16,
+          "typeface": "Inter",
+          "color": "#FFFFFF",
+          "italic": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/298f2psb",
+        "kind": "textbox",
+        "text": "T H E   B I G   I D E A",
+        "position": {
+          "left": 52.52,
+          "top": 22.94,
+          "width": 323.65,
+          "height": 33.92
+        },
+        "style": {
+          "fontSize": 12,
+          "typeface": "Inter",
+          "color": "#FFFFFF",
+          "bold": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "im/5kzypcbu",
+        "kind": "image",
+        "position": {
+          "left": 813.26,
+          "top": 27.26,
+          "width": 120.73,
+          "height": 21
+        }
+      },
+      {
+        "id": "im/4zqxw7a9",
+        "kind": "image",
+        "position": {
+          "left": 850.56,
+          "top": 496.95,
+          "width": 83.42,
+          "height": 21.52
+        }
+      }
+    ]
+  },
+  {
+    "id": "sl/gnmp4jqx",
+    "index": 6,
+    "layout": {
+      "id": "ly/4v2ps7ql",
+      "name": "TITLE_AND_BODY"
+    },
+    "elements": [
+      {
+        "id": "sh/0z2l4z6p",
+        "kind": "textbox",
+        "text": "L O R E M  I P S U M  S I T  A M E T",
+        "position": {
+          "left": 318.26,
+          "top": 89.19,
+          "width": 432.54,
+          "height": 35.56
+        },
+        "style": {
+          "fontSize": 13.33,
+          "typeface": "Inter",
+          "color": "#000000",
+          "bold": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/10b2dk7a",
+        "kind": "textbox",
+        "text": "LOREM IPSUM DO LO SIT AMET",
+        "position": {
+          "left": 307.71,
+          "top": 119.94,
+          "width": 428.63,
+          "height": 145.45
+        },
+        "style": {
+          "fontSize": 52,
+          "typeface": "Inter Medium",
+          "color": "#000000",
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/q903y5on",
+        "kind": "textbox",
+        "text": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt.",
+        "position": {
+          "left": 308.34,
+          "top": 273.81,
+          "width": 463.37,
+          "height": 106.65
+        },
+        "style": {
+          "fontSize": 24,
+          "typeface": "Inter",
+          "color": "#000000",
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "im/aho3u5ov",
+        "kind": "image",
+        "position": {
+          "left": 0,
+          "top": 0,
+          "width": 264.57,
+          "height": 528.7
+        }
+      },
+      {
+        "id": "im/y54nipkz",
+        "kind": "image",
+        "position": {
+          "left": 814.71,
+          "top": 26.75,
+          "width": 120.73,
+          "height": 21
+        }
+      },
+      {
+        "id": "im/j6doru1k",
+        "kind": "image",
+        "position": {
+          "left": 854.03,
+          "top": 484.78,
+          "width": 81.4,
+          "height": 21
+        }
+      }
+    ]
+  },
+  {
+    "id": "sl/fu1gfa1s",
+    "index": 7,
+    "layout": {
+      "id": "ly/4v2ps7ql",
+      "name": "TITLE_AND_BODY"
+    },
+    "elements": [
+      {
+        "id": "sh/03mhwjap",
+        "kind": "shape",
+        "position": {
+          "left": 0,
+          "top": 156.38,
+          "width": 960,
+          "height": 382.52
+        },
+        "style": {
+          "fontSize": 18.67,
+          "typeface": "Arial",
+          "color": "#000000",
+          "alignment": "center"
+        }
+      },
+      {
+        "id": "sh/14vy5ora",
+        "kind": "textbox",
+        "text": "KEY TAKEAWAYS",
+        "position": {
+          "left": 39.39,
+          "top": 80.79,
+          "width": 501.51,
+          "height": 82.43
+        },
+        "style": {
+          "fontSize": 52,
+          "typeface": "Inter Medium",
+          "color": "#000000",
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/u50fi5sf",
+        "kind": "textbox",
+        "text": "TAKEAWAY\n\nBrief explanation of\nwhy this matters",
+        "position": {
+          "left": 42.79,
+          "top": 290.22,
+          "width": 268.69,
+          "height": 122.8
+        },
+        "style": {
+          "fontSize": 24,
+          "typeface": "Inter",
+          "color": "#FFFFFF",
+          "bold": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/v69gra90",
+        "kind": "textbox",
+        "text": "T H R E E  T H I N G S  T O  R E M E M B E R",
+        "position": {
+          "left": 51.34,
+          "top": 22.94,
+          "width": 323.65,
+          "height": 33.92
+        },
+        "style": {
+          "fontSize": 12,
+          "typeface": "Inter",
+          "color": "#000000",
+          "bold": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "im/0fq547a9",
+        "kind": "image",
+        "position": {
+          "left": 652.3,
+          "top": 202.45,
+          "width": 73.99,
+          "height": 62.89
+        }
+      },
+      {
+        "id": "im/lgz6xsbu",
+        "kind": "image",
+        "position": {
+          "left": 350.58,
+          "top": 202.45,
+          "width": 71.77,
+          "height": 62.89
+        }
+      },
+      {
+        "id": "im/yd8n2xs3",
+        "kind": "image",
+        "position": {
+          "left": 50.77,
+          "top": 207.58,
+          "width": 55.49,
+          "height": 62.89
+        }
+      },
+      {
+        "id": "sh/axojmdcr",
+        "kind": "shape",
+        "position": {
+          "left": 327.72,
+          "top": 270.82,
+          "width": 0.91,
+          "height": 206.36
+        },
+        "style": {
+          "fontSize": 18.67,
+          "typeface": "Arial",
+          "color": "#000000",
+          "alignment": "center"
+        }
+      },
+      {
+        "id": "sh/lozi1sbe",
+        "kind": "shape",
+        "position": {
+          "left": 630.07,
+          "top": 270.82,
+          "width": 0.91,
+          "height": 206.36
+        },
+        "style": {
+          "fontSize": 18.67,
+          "typeface": "Arial",
+          "color": "#000000",
+          "alignment": "center"
+        }
+      },
+      {
+        "id": "sh/knq1snut",
+        "kind": "textbox",
+        "text": "TAKEAWAY\n\nBrief explanation of\nwhy this matters",
+        "position": {
+          "left": 341.72,
+          "top": 290.22,
+          "width": 268.69,
+          "height": 122.8
+        },
+        "style": {
+          "fontSize": 24,
+          "typeface": "Inter",
+          "color": "#FFFFFF",
+          "bold": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/jmh0zit8",
+        "kind": "textbox",
+        "text": "TAKEAWAY\n\nBrief explanation of\nwhy this matters",
+        "position": {
+          "left": 645.25,
+          "top": 290.22,
+          "width": 268.69,
+          "height": 122.8
+        },
+        "style": {
+          "fontSize": 24,
+          "typeface": "Inter",
+          "color": "#FFFFFF",
+          "bold": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "im/bqh4rits",
+        "kind": "image",
+        "position": {
+          "left": 0,
+          "top": 509,
+          "width": 960,
+          "height": 28.67
+        }
+      },
+      {
+        "id": "im/on65wnu1",
+        "kind": "image",
+        "position": {
+          "left": 814.71,
+          "top": 26.75,
+          "width": 120.73,
+          "height": 21
+        }
+      },
+      {
+        "id": "im/pofmp8bm",
+        "kind": "image",
+        "position": {
+          "left": 850.56,
+          "top": 496.95,
+          "width": 83.42,
+          "height": 21.52
+        }
+      }
+    ]
+  },
+  {
+    "id": "sl/udsvah03",
+    "index": 8,
+    "layout": {
+      "id": "ly/4v2ps7ql",
+      "name": "TITLE_AND_BODY"
+    },
+    "elements": [
+      {
+        "id": "sh/cfmdo3e5",
+        "kind": "textbox",
+        "text": "L O R E M  I P S U M  S I T  A M E T",
+        "position": {
+          "left": 50.75,
+          "top": 89.36,
+          "width": 432.54,
+          "height": 35.56
+        },
+        "style": {
+          "fontSize": 13.33,
+          "typeface": "Inter",
+          "color": "#000000",
+          "bold": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/dgfeh8fq",
+        "kind": "textbox",
+        "text": "LOREM IPSUM DO LOR SIT AMET\n",
+        "position": {
+          "left": 39.34,
+          "top": 120.1,
+          "width": 428.63,
+          "height": 208.47
+        },
+        "style": {
+          "fontSize": 52,
+          "typeface": "Inter Medium",
+          "color": "#000000",
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/qt4vmtwz",
+        "kind": "textbox",
+        "text": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt.",
+        "position": {
+          "left": 39.98,
+          "top": 273.98,
+          "width": 463.37,
+          "height": 106.65
+        },
+        "style": {
+          "fontSize": 24,
+          "typeface": "Inter",
+          "color": "#000000",
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "im/6hgf29kv",
+        "kind": "image",
+        "position": {
+          "left": 597.8,
+          "top": 0,
+          "width": 362.2,
+          "height": 540
+        }
+      },
+      {
+        "id": "im/horyh8ji",
+        "kind": "image",
+        "position": {
+          "left": 26.42,
+          "top": 25.84,
+          "width": 120.73,
+          "height": 21
+        }
+      },
+      {
+        "id": "im/gnix832x",
+        "kind": "image",
+        "position": {
+          "left": 850.56,
+          "top": 496.95,
+          "width": 83.42,
+          "height": 21.52
+        }
+      }
+    ]
+  },
+  {
+    "id": "sl/m90b6t0r",
+    "index": 9,
+    "layout": {
+      "id": "ly/4v2ps7ql",
+      "name": "TITLE_AND_BODY"
+    },
+    "elements": [
+      {
+        "id": "sh/ruds3ilk",
+        "kind": "shape",
+        "position": {
+          "left": 0,
+          "top": -1.09,
+          "width": 960,
+          "height": 540
+        },
+        "style": {
+          "fontSize": 18.67,
+          "typeface": "Arial",
+          "color": "#000000",
+          "alignment": "center"
+        }
+      },
+      {
+        "id": "sh/6t4rad4z",
+        "kind": "textbox",
+        "text": "CONTEXT",
+        "position": {
+          "left": 544.4,
+          "top": 166.34,
+          "width": 197.73,
+          "height": 38.77
+        },
+        "style": {
+          "fontSize": 16,
+          "typeface": "Inter",
+          "color": "#FDDA24",
+          "bold": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/twva583q",
+        "kind": "textbox",
+        "text": "WHAT WE’RE LOOKING AT",
+        "position": {
+          "left": 61.69,
+          "top": 93.56,
+          "width": 539.09,
+          "height": 67.87
+        },
+        "style": {
+          "fontSize": 40,
+          "typeface": "Inter SemiBold",
+          "color": "#FFFFFF",
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/svm9c3m5",
+        "kind": "textbox",
+        "text": "What problem are we solving?",
+        "position": {
+          "left": 538.04,
+          "top": 205.11,
+          "width": 427.56,
+          "height": 42.02
+        },
+        "style": {
+          "fontSize": 18.67,
+          "typeface": "Inter Light",
+          "color": "#FFFFFF",
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/fyds7ilw",
+        "kind": "textbox",
+        "text": "D E M O  /  C A S E   S T U D Y",
+        "position": {
+          "left": 52.19,
+          "top": 22.94,
+          "width": 323.65,
+          "height": 33.92
+        },
+        "style": {
+          "fontSize": 12,
+          "typeface": "Inter",
+          "color": "#FFFFFF",
+          "bold": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/ex4bed4b",
+        "kind": "shape",
+        "position": {
+          "left": -0.82,
+          "top": -1.09,
+          "width": 33.01,
+          "height": 540
+        },
+        "style": {
+          "fontSize": 18.67,
+          "typeface": "Arial",
+          "color": "#000000",
+          "alignment": "center"
+        }
+      },
+      {
+        "id": "sh/25kv2h0f",
+        "kind": "textbox",
+        "text": "02.      DECISION",
+        "position": {
+          "left": 544.4,
+          "top": 266.34,
+          "width": 197.73,
+          "height": 38.77
+        },
+        "style": {
+          "fontSize": 16,
+          "typeface": "Inter",
+          "color": "#FDDA24",
+          "bold": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/n6twvm10",
+        "kind": "textbox",
+        "text": "What changed?",
+        "position": {
+          "left": 538.04,
+          "top": 305.11,
+          "width": 427.56,
+          "height": 42.02
+        },
+        "style": {
+          "fontSize": 18.67,
+          "typeface": "Inter Light",
+          "color": "#FFFFFF",
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/o7md47il",
+        "kind": "textbox",
+        "text": "03.      RESULT",
+        "position": {
+          "left": 544.4,
+          "top": 366.34,
+          "width": 197.73,
+          "height": 38.77
+        },
+        "style": {
+          "fontSize": 16,
+          "typeface": "Inter",
+          "color": "#FDDA24",
+          "bold": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/p8vexcj6",
+        "kind": "textbox",
+        "text": "What was learned?",
+        "position": {
+          "left": 538.04,
+          "top": 405.11,
+          "width": 427.56,
+          "height": 42.02
+        },
+        "style": {
+          "fontSize": 18.67,
+          "typeface": "Inter Light",
+          "color": "#FFFFFF",
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/a94v6h0r",
+        "kind": "shape",
+        "position": {
+          "left": 68.89,
+          "top": 175.37,
+          "width": 433.26,
+          "height": 231.81
+        },
+        "style": {
+          "fontSize": 18.67,
+          "typeface": "Arial",
+          "color": "#000000",
+          "alignment": "center"
+        }
+      },
+      {
+        "id": "sh/badwzm1w",
+        "kind": "textbox",
+        "text": "[SCREENSHOT / DEMO FRAME]",
+        "position": {
+          "left": 135.3,
+          "top": 270.27,
+          "width": 300.44,
+          "height": 40.41
+        },
+        "style": {
+          "fontSize": 17.33,
+          "typeface": "Inter Light",
+          "color": "#999999",
+          "alignment": "center"
+        }
+      },
+      {
+        "id": "im/d4jyxgru",
+        "kind": "image",
+        "position": {
+          "left": 813.26,
+          "top": 27.26,
+          "width": 120.73,
+          "height": 21
+        }
+      },
+      {
+        "id": "im/c3axobq9",
+        "kind": "image",
+        "position": {
+          "left": 850.56,
+          "top": 496.95,
+          "width": 83.42,
+          "height": 21.52
+        }
+      }
+    ]
+  },
+  {
+    "id": "sl/jetc3ut0",
+    "index": 10,
+    "layout": {
+      "id": "ly/4v2ps7ql",
+      "name": "TITLE_AND_BODY"
+    },
+    "elements": [
+      {
+        "id": "sh/jq5gr6h4",
+        "kind": "shape",
+        "position": {
+          "left": 0,
+          "top": -1.09,
+          "width": 960,
+          "height": 540
+        },
+        "style": {
+          "fontSize": 18.67,
+          "typeface": "Arial",
+          "color": "#000000",
+          "alignment": "center"
+        }
+      },
+      {
+        "id": "sh/ypwzi1gj",
+        "kind": "textbox",
+        "text": "NAME / CONTACT / EVENT URL",
+        "position": {
+          "left": 52.16,
+          "top": 203.73,
+          "width": 432.54,
+          "height": 38.77
+        },
+        "style": {
+          "fontSize": 16,
+          "typeface": "Inter",
+          "color": "#434343",
+          "bold": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/xonypwzy",
+        "kind": "textbox",
+        "text": "T H A N K   Y O U",
+        "position": {
+          "left": 51.34,
+          "top": 22.94,
+          "width": 323.65,
+          "height": 33.92
+        },
+        "style": {
+          "fontSize": 12,
+          "typeface": "Inter",
+          "color": "#000000",
+          "bold": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "im/5onulwf2",
+        "kind": "image",
+        "position": {
+          "left": 826.57,
+          "top": 494.84,
+          "width": 84.35,
+          "height": 21.52
+        }
+      },
+      {
+        "id": "im/ilcvahwb",
+        "kind": "image",
+        "position": {
+          "left": 493.94,
+          "top": 69.21,
+          "width": 466.06,
+          "height": 469.7
+        }
+      },
+      {
+        "id": "im/jmlcjmxw",
+        "kind": "image",
+        "position": {
+          "left": 814.71,
+          "top": 26.75,
+          "width": 120.73,
+          "height": 21
+        }
+      },
+      {
+        "id": "sh/hkry10zi",
+        "kind": "textbox",
+        "text": "QUESTIONS?",
+        "position": {
+          "left": 40.89,
+          "top": 121.31,
+          "width": 428.63,
+          "height": 82.43
+        },
+        "style": {
+          "fontSize": 52,
+          "typeface": "Inter Medium",
+          "color": "#000000",
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "im/pk7exgf6",
+        "kind": "image",
+        "position": {
+          "left": 850.56,
+          "top": 496.95,
+          "width": 83.42,
+          "height": 21.52
+        }
+      }
+    ]
+  },
+  {
+    "id": "sl/8f2psfyx",
+    "index": 11,
+    "layout": {
+      "id": "ly/4v2ps7ql",
+      "name": "TITLE_AND_BODY"
+    },
+    "elements": [
+      {
+        "id": "sh/hojalsja",
+        "kind": "textbox",
+        "text": "YOUR NEXT STEP",
+        "position": {
+          "left": 41.42,
+          "top": 81.65,
+          "width": 428.63,
+          "height": 82.43
+        },
+        "style": {
+          "fontSize": 52,
+          "typeface": "Inter Medium",
+          "color": "#000000",
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/wnatcn2p",
+        "kind": "textbox",
+        "text": "One clear action participants can take after this session",
+        "position": {
+          "left": 43.09,
+          "top": 165.22,
+          "width": 364.57,
+          "height": 77.57
+        },
+        "style": {
+          "fontSize": 24,
+          "typeface": "Inter",
+          "color": "#000000",
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "im/a18vytwz",
+        "kind": "image",
+        "position": {
+          "left": 0,
+          "top": 368.5,
+          "width": 960,
+          "height": 159.9
+        }
+      },
+      {
+        "id": "sh/u18baxkz",
+        "kind": "textbox",
+        "text": "K E E P  B U I L D I N G",
+        "position": {
+          "left": 52.52,
+          "top": 22.94,
+          "width": 323.65,
+          "height": 33.92
+        },
+        "style": {
+          "fontSize": 12,
+          "typeface": "Inter",
+          "color": "#000000",
+          "bold": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "im/gzudcnu9",
+        "kind": "image",
+        "position": {
+          "left": 789.98,
+          "top": 46.65,
+          "width": 120.73,
+          "height": 21
+        }
+      },
+      {
+        "id": "im/h03e5svu",
+        "kind": "image",
+        "position": {
+          "left": 814.71,
+          "top": 26.75,
+          "width": 120.73,
+          "height": 21
+        }
+      },
+      {
+        "id": "sh/y5o7it0r",
+        "kind": "shape",
+        "position": {
+          "left": 665.6,
+          "top": 242.8,
+          "width": 165.76,
+          "height": 165.76
+        },
+        "style": {
+          "fontSize": 18.67,
+          "typeface": "Arial",
+          "color": "#000000",
+          "alignment": "center"
+        }
+      },
+      {
+        "id": "sh/z6x8ryhw",
+        "kind": "textbox",
+        "text": "[QR CODE]",
+        "position": {
+          "left": 659.58,
+          "top": 308.22,
+          "width": 176.09,
+          "height": 40.41
+        },
+        "style": {
+          "fontSize": 17.33,
+          "typeface": "Inter Light",
+          "color": "#999999",
+          "alignment": "center"
+        }
+      },
+      {
+        "id": "im/dw7yxwf2",
+        "kind": "image",
+        "position": {
+          "left": 850.56,
+          "top": 496.95,
+          "width": 83.42,
+          "height": 21.52
+        }
+      }
+    ]
+  },
+  {
+    "id": "sl/hgzapcr6",
+    "index": 12,
+    "layout": {
+      "id": "ly/4v2ps7ql",
+      "name": "TITLE_AND_BODY"
+    },
+    "elements": [
+      {
+        "id": "sh/m5sfa5wb",
+        "kind": "shape",
+        "position": {
+          "left": 235.76,
+          "top": -0.01,
+          "width": 724.25,
+          "height": 535.87
+        },
+        "style": {
+          "fontSize": 18.67,
+          "typeface": "Arial",
+          "color": "#000000",
+          "alignment": "center"
+        }
+      },
+      {
+        "id": "im/4f2pw36p",
+        "kind": "image",
+        "position": {
+          "left": 0,
+          "top": 0,
+          "width": 221.21,
+          "height": 535.87
+        }
+      },
+      {
+        "id": "sh/s3exozel",
+        "kind": "textbox",
+        "text": "THANK YOU",
+        "position": {
+          "left": 394.62,
+          "top": 187.22,
+          "width": 428.63,
+          "height": 82.43
+        },
+        "style": {
+          "fontSize": 52,
+          "typeface": "Inter Medium",
+          "color": "#000000",
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "im/lw36t4zy",
+        "kind": "image",
+        "position": {
+          "left": 282.35,
+          "top": 16.44,
+          "width": 137.53,
+          "height": 39.61
+        }
+      },
+      {
+        "id": "im/kvu50zyd",
+        "kind": "image",
+        "position": {
+          "left": 60.18,
+          "top": 364.51,
+          "width": 60.59,
+          "height": 57.61
+        }
+      },
+      {
+        "id": "sh/qhoryx83",
+        "kind": "shape",
+        "position": {
+          "left": 217.32,
+          "top": -0.01,
+          "width": 33.01,
+          "height": 535.87
+        },
+        "style": {
+          "fontSize": 18.67,
+          "typeface": "Arial",
+          "color": "#000000",
+          "alignment": "center"
+        }
+      },
+      {
+        "id": "im/y9cnypgn",
+        "kind": "image",
+        "position": {
+          "left": 169.71,
+          "top": 440.87,
+          "width": 60.59,
+          "height": 57.61
+        }
+      },
+      {
+        "id": "im/t0n6x4za",
+        "kind": "image",
+        "position": {
+          "left": 230.3,
+          "top": 129.61,
+          "width": 60.59,
+          "height": 57.61
+        }
+      },
+      {
+        "id": "im/8zep4jyp",
+        "kind": "image",
+        "position": {
+          "left": 854.03,
+          "top": 484.78,
+          "width": 81.4,
+          "height": 21
+        }
+      }
+    ]
+  }
+]
