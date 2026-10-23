@@ -125,6 +125,7 @@ export const MyAction = () => {
 - `describe(error, contractErrors)`: #3221 over the cap, #3002/#3016 no rule or
   expired, #3014 an uncovered contract in the tree, Nido relayer codes, and your
   contract's `Error(Contract, #n)`.
+- `isOverCap(error)`: the #3221 refusal, for a message that names your cap.
 - `isSmartAccount(address)` tells a C-address from a G-address.
 
 ## Smart accounts (C-addresses): what works

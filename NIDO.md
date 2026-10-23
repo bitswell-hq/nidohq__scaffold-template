@@ -49,6 +49,11 @@ create one at https://test.nido.fyi: one passkey, and it arrives with 5 test
 XLM. Back in the app, approve the session (one passkey confirmation per grant),
 and each call after that goes through without a prompt.
 
+In the sample, each wrong guess sends 1 XLM to the game. The session you approve
+lets the game's key call `guess` and spend up to 2 XLM a day from your account,
+so two wrong guesses go through without a prompt and your account refuses the
+third before anything is sent. The app says so and the guess costs nothing.
+
 `new-app` gives the copy its own package name, page title, deployer identity
 (`<name>-deployer`) and dev-server port, so several apps on one machine don't
 collide. Pass `--name` when the folder name isn't the app name.
@@ -158,6 +163,9 @@ Everything here comes from `@stellar-scaffold/app-lib` (the template's
   expired; #3014 a contract in the call has no rule), Nido's relayer codes, and
   your contract's `Error(Contract, #n)` looked up in `contractErrors` (the
   generated client's `Errors`, or your own table).
+- `isOverCap(error)` is true when the account refused a call for going over a
+  grant's cap (#3221), so you can say what the cap was and when to come back.
+  The account checks during simulation, so nothing was sent or paid.
 - `isSmartAccount(address)` tells a Nido C-address from a classic G-address, for
   example to link `/contract/` rather than `/account/` on an explorer.
 
@@ -208,7 +216,9 @@ Some patterns that work:
 - **An action that moves no money** (claim, vote, check in): one grant on your
   contract, no cap. The `--blank` starter is this.
 - **A capped payment** (tip, buy): two grants, your contract plus the token with
-  a `limit`. Guess the Number is this.
+  a `limit`. Guess the Number is this: 1 XLM a wrong guess, capped at 2 XLM a
+  day. Its `period` matches the grant's 24-hour `duration`, so the cap is also
+  the most one approval can spend.
 - **Shared funds** (a group pot): your contract holds the money and pays out
   when enough members approve; each member uses their own Nido account.
 - **Limits for someone else** (an allowance): a cap limits a key, not the

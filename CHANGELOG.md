@@ -1,9 +1,23 @@
 # Changelog
 
+## Unreleased
+
+### Guess the Number shows the spending cap
+
+- The sample's XLM grant caps spending at 2 XLM a day (was 3), so two wrong
+  guesses go through without a prompt and the account refuses the third. The
+  cap's `day` matches the session's `24h`, so it is also the most one approval
+  can spend.
+- The gate and the result say what a guess costs, and a refused guess says which
+  cap stopped it and that it cost nothing, instead of the generic refusal.
+- `isOverCap(error)` in app-lib recognises the #3221 refusal, before or after
+  `describe` has explained it. The e2e mocks can refuse an enforced simulation
+  (`refuse`), and a test covers the over-cap guess.
+
 ## v2 (2026-10-22): after the hackathon simulation
 
-Each change names the action or finding it answers in the feedback report from
-a simulated six-team hackathon run, Oct 2026 (top-10 action numbers; finding IDs
+Each change names the action or finding it answers in the feedback report from a
+simulated six-team hackathon run, Oct 2026 (top-10 action numbers; finding IDs
 from §5.3).
 
 ### One human path (action 4: T-H3, T-H4, T-A5)

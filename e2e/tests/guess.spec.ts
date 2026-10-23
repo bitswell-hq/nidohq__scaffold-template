@@ -104,7 +104,7 @@ test("a Nido account approves a session once, then guesses without a popup", asy
 		target: sac,
 		signer,
 		functions: "transfer",
-		limit: "3",
+		limit: "2",
 		limit_period: "day",
 	})
 
@@ -136,6 +136,31 @@ test("a Nido account approves a session once, then guesses without a popup", asy
 		path: "../screenshots/nido-session.png",
 		fullPage: true,
 	})
+})
+
+test("over the 2 XLM cap, the account refuses and the player is told why", async ({
+	page,
+	context,
+}) => {
+	let overCap = false
+	await mockServices(context, {
+		auth: guessAuth,
+		refuse: () => (overCap ? "HostError: Error(Contract, #3221)" : undefined),
+	})
+	await connect(page)
+	await page.getByRole("button", { name: approve }).click()
+	await expect(page.getByText("This app holds a session key")).toBeVisible()
+	await guess(page)
+
+	overCap = true
+	let popups = 0
+	page.on("popup", () => popups++)
+	await page.getByPlaceholder("Guess a number from 1 to 10!").fill("3")
+	await page.getByRole("button", { name: "Submit", exact: true }).click()
+	await expect(page.getByRole("alert")).toContainText(
+		"the 2 XLM a day you let this game spend",
+	)
+	expect(popups).toBe(0)
 })
 
 test("a cancelled grant keeps the app's key for the next try", async ({
