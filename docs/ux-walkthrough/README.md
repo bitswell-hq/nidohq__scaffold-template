@@ -6,20 +6,21 @@ template), with throwaway keys and virtual passkeys only.
 
 ## Summary
 
-- **The Nido template already ships a session with a spending cap.** On `main`
-  (`5170276`), Guess the Number asks for one session made of two grants: `guess`
-  on the game, and XLM `transfer` capped at **3 XLM/day**. A first-time player
-  creates a passkey account on test.nido.fyi, approves once (two passkey
-  confirmations on two Nido pages), then guesses with no prompts. The 4th wrong
-  guess was refused by the account (`#3221`) with "Your account refused: this
-  would go over the spending cap you gave this app." (Part A, steps 01–29.)
+- **The Nido template already shipped a session with a spending cap.** At
+  `5170276`, before #9, Guess the Number asks for one session made of two
+  grants: `guess` on the game, and XLM `transfer` capped at **3 XLM/day**. A
+  first-time player creates a passkey account on test.nido.fyi, approves once
+  (two passkey confirmations on two Nido pages), then guesses with no prompts.
+  The 4th wrong guess was refused by the account (`#3221`) with "Your account
+  refused: this would go over the spending cap you gave this app." (Part A,
+  steps 01–29.)
 - **Part B is a small change to the template itself**: the cap is now **2
   XLM/day**, so two wrong guesses go through and the account refuses the third.
   The game says what a guess costs, and the refusal names the cap and says it
   cost nothing. A small `isOverCap()` helper, an e2e test and docs come with it.
-  The change is https://github.com/nidohq/scaffold-template/pull/9 (not yet
-  merged). Verified live on testnet (steps 30–44): unit 34/34, e2e 12/12, lint,
-  build, `format:check`, and a fresh app from the commit.
+  The change is https://github.com/nidohq/scaffold-template/pull/9, merged after
+  this walkthrough. Verified live on testnet (steps 30–44): unit 34/34, e2e
+  12/12, lint, build, `format:check`, and a fresh app from the commit.
 - **"One session" is one Approve click but two passkey confirmations.** Nido's
   grant page takes exactly one `target` per request
   (`packages/frontend/src/lib/policy/docRequest.ts` in nidohq/nido), and the
@@ -80,7 +81,7 @@ the game's instance storage (`stellar contract read … --key-xdr AAAAFA==` →
 
 ---
 
-## Part A: Nido template as shipped (`main` 5170276), first-time player
+## Part A: Nido template as shipped before #9 (`5170276`), first-time player
 
 Player account: `CCEZ6BX6PWOP6HQURE4A7TT77UY6M25J4IV22YRKBYYUCXIZO2NDE4WA`
 (created in this run).
@@ -378,23 +379,23 @@ player confirms, and the only protection is reading every popup.
 
 ## Comparison
 
-|                                         | Default template (G-address, Freighter)                                                                                                      | Nido template today (`main`, 3 XLM/day)                                                                                                                                                                                          | Nido template + session, 2 XLM/day ([PR #9](https://github.com/nidohq/scaffold-template/pull/9))                              |
+|                                         | Default template (G-address, Freighter)                                                                                                      | Nido template before #9 (`5170276`, 3 XLM/day)                                                                                                                                                                                   | Nido template + session, 2 XLM/day ([PR #9](https://github.com/nidohq/scaffold-template/pull/9))                              |
 | --------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
 | Network in the dev loop                 | Local quickstart (Docker)                                                                                                                    | Testnet                                                                                                                                                                                                                          | Testnet                                                                                                                       |
 | What the player installs                | A browser extension (Freighter, Hana, or xBull)                                                                                              | Nothing; a passkey on the device                                                                                                                                                                                                 | Nothing; a passkey on the device                                                                                              |
-| Account setup                           | Install → password → 12-word phrase + confirm → add "Local" network by hand → connect → Fund Account                                         | test.nido.fyi in the popup: Get started → "Create with a passkey" (1 biometric) → continue; ~48 s; arrives with 5 XLM                                                                                                            | Same as today; 39 s from opening the app here                                                                                 |
+| Account setup                           | Install → password → 12-word phrase + confirm → add "Local" network by hand → connect → Fund Account                                         | test.nido.fyi in the popup: Get started → "Create with a passkey" (1 biometric) → continue; ~48 s; arrives with 5 XLM                                                                                                            | Same as before #9; 39 s from opening the app here                                                                             |
 | Secrets the player keeps                | Recovery phrase and extension password                                                                                                       | None to write down (passkey; recovery optional)                                                                                                                                                                                  | Same                                                                                                                          |
 | Connect                                 | Picker → Freighter → connection popup                                                                                                        | Picker → Nido → pick account (address only); first time it's a two-pass flow with an error toast (step 12)                                                                                                                       | Same                                                                                                                          |
 | Before the first action                 | Nothing beyond funding                                                                                                                       | One Approve click → **2 Nido pages, 2 passkey confirmations** (game rule with "no cap" ticked, XLM rule with cap)                                                                                                                | Same, with a cap of 2                                                                                                         |
 | Prompts per guess                       | **1 Freighter popup** every guess                                                                                                            | **0**                                                                                                                                                                                                                            | **0**                                                                                                                         |
 | What the player sees per guess          | Popup → "Incorrect guess. Try again!" (no hash)                                                                                              | "Incorrect guess. Try again!" + tx hash; balance −1                                                                                                                                                                              | "Incorrect guess: that cost 1 XLM. Try again!" + tx hash; balance −1                                                          |
 | Time per guess                          | ~1–3 s on local, plus the time to read and approve the popup                                                                                 | ~4–7 s on testnet                                                                                                                                                                                                                | ~6–7 s on testnet                                                                                                             |
-| Who pays the fee per guess              | The player (≈0.001–0.002 XLM on local)                                                                                                       | The app's session key, on testnet (Friendbot-funded): ≈0.53 XLM for the first guess with a new session, ≈0.034 XLM for each later one; see [Where the fee goes](#where-the-fee-goes)                                             | Same as today                                                                                                                 |
+| Who pays the fee per guess              | The player (≈0.001–0.002 XLM on local)                                                                                                       | The app's session key, on testnet (Friendbot-funded): ≈0.53 XLM for the first guess with a new session, ≈0.034 XLM for each later one; see [Where the fee goes](#where-the-fee-goes)                                             | Same as before #9                                                                                                             |
 | Who pays account creation and approvals | Local Friendbot funds the player                                                                                                             | Nido's relayer (NIDO.md measured ≈1.4 XLM per account, ≈4.5 XLM first grant, ≈2.7 XLM capped grant)                                                                                                                              | Same                                                                                                                          |
 | Spending protection                     | None beyond reading each popup                                                                                                               | The account enforces 3 XLM/day for this app's key, until the rules expire (24 h)                                                                                                                                                 | The account enforces **2 XLM/day**: two wrong guesses, then refusal                                                           |
 | Over the limit                          | n/a                                                                                                                                          | Refused in simulation (~1.2 s), nothing sent: "Your account refused: this would go over the spending cap you gave this app."                                                                                                     | Refused the same way: "That's the 2 XLM a day you let this game spend… It cost nothing. Come back tomorrow for more guesses." |
 | Player rejects / cancels                | Shown as "Incorrect guess. Try again!" (misleading)                                                                                          | Cancelling on Nido's grant page keeps the key; the gate asks again (e2e-tested)                                                                                                                                                  | Same                                                                                                                          |
-| Other failure modes                     | **Guess never sent: missing `name` on the input (upstream bug)**; extension on the wrong network; unfunded account; lost phrase = lost funds | Relayer budget, busy or timeout on grants (the gate offers "Check again" / "Ask Nido again"); session expires after 24 h (Renew); key lives in this origin's `localStorage`, port included; revoking isn't available in Nido yet | Same as today                                                                                                                 |
+| Other failure modes                     | **Guess never sent: missing `name` on the input (upstream bug)**; extension on the wrong network; unfunded account; lost phrase = lost funds | Relayer budget, busy or timeout on grants (the gate offers "Check again" / "Ask Nido again"); session expires after 24 h (Renew); key lives in this origin's `localStorage`, port included; revoking isn't available in Nido yet | Same as before #9                                                                                                             |
 | Keys the app holds                      | None                                                                                                                                         | A session key per account and origin (can spend at most the cap until expiry)                                                                                                                                                    | Same                                                                                                                          |
 
 ### Where the fee goes
@@ -429,7 +430,7 @@ Fees are in XLM; 1 XLM = 10,000,000 stroops.
 ## Developer section: what changes for the template
 
 The change is https://github.com/nidohq/scaffold-template/pull/9, one commit on
-top of `main` (`5170276`). 9 files, +116/−28.
+top of `5170276`, merged to `main` after this walkthrough. 9 files, +116/−28.
 
 What a developer sees:
 
@@ -807,7 +808,7 @@ diff --git a/e2e/tests/mocks.ts b/e2e/tests/mocks.ts
 
 ## Timings
 
-| Moment                                          | Part A (3 XLM, main)                                                             | Part B (2 XLM, PR #9)                   |
+| Moment                                          | Part A (3 XLM, before #9)                                                        | Part B (2 XLM, PR #9)                   |
 | ----------------------------------------------- | -------------------------------------------------------------------------------- | --------------------------------------- |
 | Init + quick start commands                     | 53 s init + 49 s (`tools:scaffold` 1, `ci` 14, `doctor` 1, `clients:testnet` 33) | 47 s (install 9 + `clients:testnet` 38) |
 | Open app → Nido account with 5 XLM              | 87 s (including the "create one first" detour)                                   | 39 s                                    |
@@ -821,10 +822,10 @@ reading time on Nido's grant pages.
 
 ## Friction hit, and recommendations
 
-Template (with or after https://github.com/nidohq/scaffold-template/pull/9):
+Template:
 
-1. **Merge https://github.com/nidohq/scaffold-template/pull/9 for Part B.** It
-   is small and tested, and it makes the cap visible to players.
+1. **Part B shipped as https://github.com/nidohq/scaffold-template/pull/9**
+   (merged). It is small and tested, and it makes the cap visible to players.
 2. **The first Nido connect for a new player is a two-pass flow that ends in a
    red error toast** (steps 03–13). "Create one first" navigates the connect
    popup away; closing it makes Stellar Wallets Kit report "Wallet connection
